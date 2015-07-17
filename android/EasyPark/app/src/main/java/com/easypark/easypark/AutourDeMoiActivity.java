@@ -19,7 +19,7 @@ public class AutourDeMoiActivity extends ActionBarActivity {
         setContentView(R.layout.activity_autour_de_moi);
 
 
-        butPlusProche = (Button)findViewById(R.id.butAutourMoi);
+        butPlusProche = (Button)findViewById(R.id.butPlusProche);
         butPlusProche.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
