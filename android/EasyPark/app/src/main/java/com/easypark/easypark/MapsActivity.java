@@ -5,6 +5,7 @@ import android.location.Location;
 import android.location.LocationManager;
 import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
+import android.util.Log;
 
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.SupportMapFragment;
@@ -16,16 +17,26 @@ public class MapsActivity extends FragmentActivity {
     private GoogleMap mMap; // Might be null if Google Play services APK is not available.
     private double latitude;
     private double longitude;
+    private String TAG ="MAP";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_maps);
         setUpMapIfNeeded();
         LocationManager locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
+        Log.d(TAG, locationManager.toString());
         Location loc =locationManager.getLastKnownLocation(LocationManager.GPS_PROVIDER);
-
-        latitude=loc.getLatitude();
-        longitude=loc.getLongitude();
+        if (loc==null){
+            loc =locationManager.getLastKnownLocation(LocationManager.NETWORK_PROVIDER);
+            Log.d(TAG,"loc "+loc.toString());
+        }
+        if (loc!=null){
+            latitude=loc.getLatitude();
+            longitude=loc.getLongitude();
+        }else{
+            latitude=0;
+            longitude=0;
+        }
 
     }
 
