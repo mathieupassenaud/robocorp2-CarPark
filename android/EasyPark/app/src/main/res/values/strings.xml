@@ -1,4 +1,10 @@
 <resources>
     <string name="app_name">EasyPark</string>
     <string name="title_activity_maps">Map</string>
+    <string name="title_activity_accueil">AccueilActivity</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_autour_de_moi">AutourDeMoiActivity</string>
+    <string name="title_activity_autour_destination">AutourDestinationActivity</string>
 </resources>

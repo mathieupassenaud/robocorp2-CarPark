@@ -34,6 +34,18 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".AccueilActivity"
+            android:label="@string/title_activity_accueil" >
+        </activity>
+        <activity
+            android:name=".AutourDeMoiActivity"
+            android:label="@string/title_activity_autour_de_moi" >
+        </activity>
+        <activity
+            android:name=".AutourDestinationActivity"
+            android:label="@string/title_activity_autour_destination" >
+        </activity>
     </application>
 
 </manifest>
