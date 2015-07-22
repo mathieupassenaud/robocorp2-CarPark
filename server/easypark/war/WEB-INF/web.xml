@@ -4,14 +4,30 @@ xmlns="http://java.sun.com/xml/ns/javaee"
 xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
 xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
 http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
-	<servlet>
-		<servlet-name>Easypark</servlet-name>
-		<servlet-class>com.robocorp2.EasyparkServlet</servlet-class>
-	</servlet>
-	<servlet-mapping>
-		<servlet-name>Easypark</servlet-name>
-		<url-pattern>/easypark</url-pattern>
-	</servlet-mapping>
+	 <servlet>
+        <servlet-name>Jersey Web Application</servlet-name>
+        <servlet-class>com.sun.jersey.spi.container.servlet.ServletContainer</servlet-class>
+        <init-param>
+            <param-name>com.sun.jersey.config.property.packages</param-name>
+            <param-value>com.robocorp2.API</param-value>
+        </init-param>
+         <load-on-startup>1</load-on-startup>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Jersey Web Application</servlet-name>
+        <url-pattern>/api/*</url-pattern>
+    </servlet-mapping>
+    
+    <filter>
+		<filter-name>datastoreFilter</filter-name>
+		<filter-class>org.slim3.datastore.DatastoreFilter</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>datastoreFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+		<dispatcher>REQUEST</dispatcher>
+	</filter-mapping>
+    
 	<welcome-file-list>
 		<welcome-file>index.html</welcome-file>
 	</welcome-file-list>

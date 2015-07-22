@@ -1,0 +1,92 @@
+{
+  "name" : "com.robocorp2.API.StructureAPI",
+  "path" : "structure",
+  "doc" : "Ce sont les data de démos, permet de voir la structure des données",
+  "author" : "Mathieu Passenaud",
+  "version" : "0.1",
+  "produceList" : [ ],
+  "consumeList" : [ ],
+  "methodList" : [ {
+    "name" : "getDemoParking",
+    "path" : "parking",
+    "doc" : "Retourne un modèle de parking",
+    "author" : "Mathieu Passenaud",
+    "version" : "0.1",
+    "produceList" : [ "application/JSON" ],
+    "consumeList" : [ ],
+    "type" : "javax.ws.rs.GET",
+    "inputList" : [ ],
+    "output" : {
+      "name" : "com.robocorp2.model.parking.Parking"
+    },
+    "subResource" : false,
+    "deprecated" : false,
+    "unimplemented" : false
+  }, {
+    "name" : "getDemoPlace",
+    "path" : "place",
+    "doc" : "Retourne une place",
+    "author" : "Mathieu Passenaud",
+    "version" : "0.1",
+    "produceList" : [ "application/JSON" ],
+    "consumeList" : [ ],
+    "type" : "javax.ws.rs.GET",
+    "inputList" : [ ],
+    "output" : {
+      "name" : "com.robocorp2.model.parking.Place"
+    },
+    "subResource" : false,
+    "deprecated" : false,
+    "unimplemented" : false
+  }, {
+    "name" : "getDemoEtage",
+    "path" : "etage",
+    "doc" : "Retourne un étage",
+    "author" : "Mathieu Passenaud",
+    "version" : "0.1",
+    "produceList" : [ "application/JSON" ],
+    "consumeList" : [ ],
+    "type" : "javax.ws.rs.GET",
+    "inputList" : [ ],
+    "output" : {
+      "name" : "com.robocorp2.model.parking.Etage"
+    },
+    "subResource" : false,
+    "deprecated" : false,
+    "unimplemented" : false
+  }, {
+    "name" : "getDemoVecteur",
+    "path" : "vecteur",
+    "doc" : "Retourne un vecteur, utilisé pour les chemins",
+    "author" : "Mathieu Passenaud",
+    "version" : "0.1",
+    "produceList" : [ "application/JSON" ],
+    "consumeList" : [ ],
+    "type" : "javax.ws.rs.GET",
+    "inputList" : [ ],
+    "output" : {
+      "name" : "com.robocorp2.model.parking.Vecteur"
+    },
+    "subResource" : false,
+    "deprecated" : false,
+    "unimplemented" : false
+  }, {
+    "name" : "getDemoCamera",
+    "path" : "camera",
+    "doc" : "Retourne une caméra",
+    "author" : "Mathieu Passenaud",
+    "version" : "0.1",
+    "produceList" : [ "application/JSON" ],
+    "consumeList" : [ ],
+    "type" : "javax.ws.rs.GET",
+    "inputList" : [ ],
+    "output" : {
+      "name" : "com.robocorp2.model.parking.Camera"
+    },
+    "subResource" : false,
+    "deprecated" : false,
+    "unimplemented" : false
+  } ],
+  "deprecated" : false,
+  "unimplemented" : false
+}

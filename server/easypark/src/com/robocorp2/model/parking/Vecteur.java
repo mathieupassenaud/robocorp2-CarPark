@@ -1,5 +1,14 @@
 package com.robocorp2.model.parking;
 
+import java.io.Serializable;
+
+import javax.xml.bind.annotation.XmlRootElement;
+
+import org.slim3.datastore.Attribute;
+import org.slim3.datastore.Model;
+
+import com.google.appengine.api.datastore.Key;
+
 /**
  * 
  * @author Mathieu Passenaud
@@ -7,43 +16,67 @@ package com.robocorp2.model.parking;
  * On peut donc en déduire le sens
  *
  */
-public class Vecteur {
-	private Point pointDebut;
-	private Point pointFin;
+@XmlRootElement
+@Model
+public class Vecteur implements Serializable {
+
+	private static final long serialVersionUID = 1L;
+	@Attribute(primaryKey = true)
+	private Key key;
+	@Attribute(lob = true)
+	private PointGPS pointDebut;
+	@Attribute(lob = true)
+	private PointGPS pointFin;
 	
+	
+	public Vecteur(){
+		
+	}
 	/**
 	 * Constructor
 	 * @param pointDebut
 	 * @param pointFin
 	 */
-	public Vecteur(Point pointDebut, Point pointFin) {
+	public Vecteur(PointGPS pointDebut, PointGPS pointFin) {
 		super();
 		this.pointDebut = pointDebut;
 		this.pointFin = pointFin;
 	}
-	
+		
+	/**
+	 * @return the key
+	 */
+	public Key getKey() {
+		return key;
+	}
+	/**
+	 * @param key the key to set
+	 */
+	public void setKey(Key key) {
+		this.key = key;
+	}
 	/**
 	 * @return the pointDebut
 	 */
-	public Point getPointDebut() {
+	public PointGPS getPointDebut() {
 		return pointDebut;
 	}
 	/**
 	 * @param pointDebut the pointDebut to set
 	 */
-	public void setPointDebut(Point pointDebut) {
+	public void setPointDebut(PointGPS pointDebut) {
 		this.pointDebut = pointDebut;
 	}
 	/**
 	 * @return the pointFin
 	 */
-	public Point getPointFin() {
+	public PointGPS getPointFin() {
 		return pointFin;
 	}
 	/**
 	 * @param pointFin the pointFin to set
 	 */
-	public void setPointFin(Point pointFin) {
+	public void setPointFin(PointGPS pointFin) {
 		this.pointFin = pointFin;
 	}
 	

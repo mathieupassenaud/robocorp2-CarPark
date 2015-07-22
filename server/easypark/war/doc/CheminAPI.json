@@ -1,0 +1,28 @@
+{
+  "name" : "com.robocorp2.API.CheminAPI",
+  "path" : "chemin",
+  "doc" : "Calcul et retour des chemins pour accéder à une place",
+  "author" : "Mathieu Passenaud",
+  "version" : "0.1",
+  "produceList" : [ ],
+  "consumeList" : [ ],
+  "methodList" : [ {
+    "name" : "getCheminToPlace",
+    "path" : "getRoute/{idPlace}",
+    "doc" : "Donne le chemin jusqu'à une place",
+    "author" : "Mathieu Passenaud",
+    "version" : "0.1",
+    "produceList" : [ ],
+    "consumeList" : [ ],
+    "type" : "",
+    "inputList" : [ ],
+    "output" : {
+      "name" : "[Lcom.robocorp2.model.parking.Vecteur;"
+    },
+    "subResource" : false,
+    "deprecated" : false,
+    "unimplemented" : true
+  } ],
+  "deprecated" : false,
+  "unimplemented" : false
+}

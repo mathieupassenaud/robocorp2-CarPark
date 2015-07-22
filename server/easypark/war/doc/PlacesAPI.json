@@ -1,0 +1,43 @@
+{
+  "name" : "com.robocorp2.API.PlacesAPI",
+  "path" : "places",
+  "doc" : "La gestion des places dans le parking",
+  "author" : "Mathieu Passenaud",
+  "version" : "0.1",
+  "produceList" : [ ],
+  "consumeList" : [ ],
+  "methodList" : [ {
+    "name" : "updatePlace",
+    "path" : "update/{idParking}/{idEtage}",
+    "doc" : "Modifie l'état de la place, et archive l'état pour les statistiques",
+    "author" : "Mathieu Passenaud",
+    "version" : "0.1",
+    "produceList" : [ "Application/JSON" ],
+    "consumeList" : [ "Application/JSON" ],
+    "type" : "javax.ws.rs.POST",
+    "inputList" : [ {
+      "name" : "idParking",
+      "context" : "javax.ws.rs.PathParam",
+      "type" : "java.lang.String",
+      "defaultValue" : ""
+    }, {
+      "name" : "idEtage",
+      "context" : "javax.ws.rs.PathParam",
+      "type" : "java.lang.String",
+      "defaultValue" : ""
+    }, {
+      "name" : "",
+      "context" : "",
+      "type" : "com.robocorp2.model.parking.Place",
+      "defaultValue" : ""
+    } ],
+    "output" : {
+      "name" : ""
+    },
+    "subResource" : false,
+    "unimplemented" : false,
+    "deprecated" : false
+  } ],
+  "unimplemented" : false,
+  "deprecated" : false
+}
