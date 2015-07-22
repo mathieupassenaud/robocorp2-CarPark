@@ -3,6 +3,8 @@ package com.robocorp2.model.parking;
 import java.io.Serializable;
 import java.util.List;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
 import javax.xml.bind.annotation.XmlRootElement;
 
 import org.slim3.datastore.Attribute;
@@ -10,6 +12,7 @@ import org.slim3.datastore.Datastore;
 import org.slim3.datastore.Model;
 
 import com.google.appengine.api.datastore.Key;
+import com.google.appengine.api.datastore.KeyFactory;
 
 /**
  * A parking
@@ -23,12 +26,14 @@ import com.google.appengine.api.datastore.Key;
  *
  */
 @XmlRootElement
-@Model
+@Entity
+@Model(kind = "Parking")
 public class Parking implements Serializable {
 
 
 	private static final long serialVersionUID = -4208347064635298120L;
 	@Attribute(primaryKey = true)
+	@Id
 	private Key key;
 	@Attribute(lob = true)
 	private List<Etage> etages;
@@ -47,7 +52,8 @@ public class Parking implements Serializable {
 
 	public Parking(List<Etage> etages, String nom, String adresse, PointGPS gps) {
 		super();
-		this.key = Datastore.createKey(this.getClass(), nom);
+		
+		this.key = Datastore.createKey(Parking.class, nom);
 		this.nom = nom;
 		this.adresse = adresse;
 		this.etages = etages;

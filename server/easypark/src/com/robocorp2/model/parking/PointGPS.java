@@ -5,6 +5,7 @@ import java.io.Serializable;
 import javax.xml.bind.annotation.XmlRootElement;
 
 import org.slim3.datastore.Attribute;
+import org.slim3.datastore.Datastore;
 import org.slim3.datastore.Model;
 
 import com.google.appengine.api.datastore.Key;
@@ -16,7 +17,7 @@ import com.google.appengine.api.datastore.Key;
  *
  */
 @XmlRootElement
-@Model
+@Model(kind = "PointGPS")
 public class PointGPS implements Serializable {
 
 	private static final long serialVersionUID = 1L;
@@ -36,6 +37,7 @@ public class PointGPS implements Serializable {
 	 */
 	public PointGPS(double x, double y) {
 		super();
+		this.key=Datastore.createKey(PointGPS.class, x+","+y);
 		this.x = x;
 		this.y = y;
 	}

@@ -20,7 +20,7 @@ import com.google.appengine.api.datastore.Key;
  *
  */
 @XmlRootElement
-@Model
+@Model(kind = "Place")
 public class Place implements Serializable{
 
 	private static final long serialVersionUID = 1L;
@@ -43,7 +43,7 @@ public class Place implements Serializable{
 	 */
 	public Place(PointGPS point, int numero, int rotation, boolean free) {
 		super();
-		this.key = Datastore.createKey(this.getClass(), numero);
+		this.key = Datastore.createKey(Place.class, numero);
 		this.point = point;
 		this.numeroDePlace = numero;
 		this.rotation = rotation;

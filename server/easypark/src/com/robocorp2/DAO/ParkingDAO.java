@@ -93,7 +93,6 @@ public class ParkingDAO {
 	 * @return key
 	 */
 	public Key saveParking(Parking parking){
-		parking.setKey(Datastore.createKey(parking.getClass(), parking.getNom()));
 		Datastore.put(parking);
 		return parking.getKey();
 	}

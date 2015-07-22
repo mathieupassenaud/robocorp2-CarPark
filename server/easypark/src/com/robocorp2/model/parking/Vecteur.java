@@ -5,6 +5,7 @@ import java.io.Serializable;
 import javax.xml.bind.annotation.XmlRootElement;
 
 import org.slim3.datastore.Attribute;
+import org.slim3.datastore.Datastore;
 import org.slim3.datastore.Model;
 
 import com.google.appengine.api.datastore.Key;
@@ -17,7 +18,7 @@ import com.google.appengine.api.datastore.Key;
  *
  */
 @XmlRootElement
-@Model
+@Model(kind = "Vecteur")
 public class Vecteur implements Serializable {
 
 	private static final long serialVersionUID = 1L;
@@ -39,6 +40,7 @@ public class Vecteur implements Serializable {
 	 */
 	public Vecteur(PointGPS pointDebut, PointGPS pointFin) {
 		super();
+		this.key = Datastore.createKey(Vecteur.class, pointDebut + ","+pointFin);
 		this.pointDebut = pointDebut;
 		this.pointFin = pointFin;
 	}

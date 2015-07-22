@@ -20,7 +20,7 @@ import com.google.appengine.api.datastore.Key;
  *
  */
 @XmlRootElement
-@Model
+@Model(kind = "Etage")
 public class Etage implements Serializable {
 
 	private static final long serialVersionUID = 1L;
@@ -43,7 +43,7 @@ public class Etage implements Serializable {
 	 */
 	public Etage(List<Place> places, List<Vecteur> chemins, List<Camera> cameras) {
 		super();
-		this.key = Datastore.createKey(this.getClass(), "etage");
+		this.key = Datastore.createKey(Etage.class, "etage");
 		this.places = places;
 		this.chemins = chemins;
 		this.cameras = cameras;
