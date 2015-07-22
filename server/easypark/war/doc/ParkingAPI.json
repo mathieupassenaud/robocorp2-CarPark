@@ -12,8 +12,8 @@
     "doc" : "Récupère un modèle de parking avec sa coordonnée GPS",
     "author" : "Mathieu Passenaud",
     "version" : "0.1",
-    "produceList" : [ "application/json" ],
-    "consumeList" : [ "application/json" ],
+    "produceList" : [ "application/json", "application/xml" ],
+    "consumeList" : [ "application/json", "application/xml" ],
     "type" : "javax.ws.rs.GET",
     "inputList" : [ {
       "name" : "latitude",
@@ -27,7 +27,7 @@
       "defaultValue" : ""
     } ],
     "output" : {
-      "name" : "com.robocorp2.model.parking.Parking"
+      "name" : "java.lang.String"
     },
     "subResource" : false,
     "deprecated" : false,
@@ -38,8 +38,8 @@
     "doc" : "Recherche un parking avec une coordonnée GPS",
     "author" : "Mathieu Passenaud",
     "version" : "0.1",
-    "produceList" : [ "application/json" ],
-    "consumeList" : [ "application/json" ],
+    "produceList" : [ "application/json", "application/xml" ],
+    "consumeList" : [ "application/json", "application/xml" ],
     "type" : "javax.ws.rs.GET",
     "inputList" : [ {
       "name" : "latitude",
@@ -53,7 +53,7 @@
       "defaultValue" : ""
     } ],
     "output" : {
-      "name" : "com.robocorp2.model.parking.Parking"
+      "name" : "java.lang.String"
     },
     "subResource" : false,
     "deprecated" : false,
@@ -64,8 +64,8 @@
     "doc" : "Créé un nouveau parking et lui attribue une clé qui est retournée",
     "author" : "Mathieu Passenaud",
     "version" : "0.1",
-    "produceList" : [ "application/json" ],
-    "consumeList" : [ "application/json" ],
+    "produceList" : [ "application/json", "application/xml" ],
+    "consumeList" : [ "application/json", "application/xml" ],
     "type" : "javax.ws.rs.PUT",
     "inputList" : [ {
       "name" : "",
@@ -85,8 +85,8 @@
     "doc" : "Edite le modèle de parking, pour ajouter/enlever des places. Retourne le parking modifié",
     "author" : "Mathieu Passenaud",
     "version" : "0.1",
-    "produceList" : [ "application/json" ],
-    "consumeList" : [ "application/json" ],
+    "produceList" : [ "application/json", "application/xml" ],
+    "consumeList" : [ "application/json", "application/xml" ],
     "type" : "javax.ws.rs.POST",
     "inputList" : [ {
       "name" : "key",
@@ -100,7 +100,7 @@
       "defaultValue" : ""
     } ],
     "output" : {
-      "name" : "com.robocorp2.model.parking.Parking"
+      "name" : "java.lang.String"
     },
     "subResource" : false,
     "deprecated" : false,
@@ -111,8 +111,8 @@
     "doc" : "Récupère un modèle de parking avec sa clé",
     "author" : "Mathieu Passenaud",
     "version" : "0.1",
-    "produceList" : [ "application/json" ],
-    "consumeList" : [ "application/json" ],
+    "produceList" : [ "application/json", "application/xml" ],
+    "consumeList" : [ "application/json", "application/xml" ],
     "type" : "javax.ws.rs.GET",
     "inputList" : [ {
       "name" : "key",
@@ -121,7 +121,7 @@
       "defaultValue" : ""
     } ],
     "output" : {
-      "name" : "com.robocorp2.model.parking.Parking"
+      "name" : "java.lang.String"
     },
     "subResource" : false,
     "deprecated" : false,

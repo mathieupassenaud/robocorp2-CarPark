@@ -17,7 +17,7 @@
     "type" : "javax.ws.rs.GET",
     "inputList" : [ ],
     "output" : {
-      "name" : "com.robocorp2.model.parking.Parking"
+      "name" : "java.lang.String"
     },
     "subResource" : false,
     "deprecated" : false,
@@ -33,7 +33,7 @@
     "type" : "javax.ws.rs.GET",
     "inputList" : [ ],
     "output" : {
-      "name" : "com.robocorp2.model.parking.Place"
+      "name" : "java.lang.String"
     },
     "subResource" : false,
     "deprecated" : false,
@@ -49,7 +49,7 @@
     "type" : "javax.ws.rs.GET",
     "inputList" : [ ],
     "output" : {
-      "name" : "com.robocorp2.model.parking.Etage"
+      "name" : "java.lang.String"
     },
     "subResource" : false,
     "deprecated" : false,
@@ -65,7 +65,7 @@
     "type" : "javax.ws.rs.GET",
     "inputList" : [ ],
     "output" : {
-      "name" : "com.robocorp2.model.parking.Vecteur"
+      "name" : "java.lang.String"
     },
     "subResource" : false,
     "deprecated" : false,
@@ -81,7 +81,23 @@
     "type" : "javax.ws.rs.GET",
     "inputList" : [ ],
     "output" : {
-      "name" : "com.robocorp2.model.parking.Camera"
+      "name" : "java.lang.String"
+    },
+    "subResource" : false,
+    "deprecated" : false,
+    "unimplemented" : false
+  }, {
+    "name" : "createCNAMParking",
+    "path" : "createCNAM",
+    "doc" : "Crée le parking CNAM",
+    "author" : "Mathieu Passenaud",
+    "version" : "0.1",
+    "produceList" : [ "application/JSON" ],
+    "consumeList" : [ ],
+    "type" : "javax.ws.rs.GET",
+    "inputList" : [ ],
+    "output" : {
+      "name" : ""
     },
     "subResource" : false,
     "deprecated" : false,
