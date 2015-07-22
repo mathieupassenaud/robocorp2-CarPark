@@ -67,8 +67,18 @@ public class ParkingAPI {
 	@ApiDoc("Récupère un modèle de parking avec sa coordonnée GPS")
 	@ApiAuthor("Mathieu Passenaud")
 	@ApiVersion("0.1")
-	public Parking getPArkingByGPSPoint(@PathParam("latitude") double latitude, @PathParam("longitude") double longitude){
+	public Parking getParkingByGPSPoint(@PathParam("latitude") double latitude, @PathParam("longitude") double longitude){
 		return ParkingDAO.getInstance().getParkingByPointGPS(new PointGPS(latitude, longitude));
 	}
 	
+	@GET
+	@Path("search/{latitude}/{longitude}")
+	@Produces("application/json")
+	@Consumes("application/json")
+	@ApiDoc("Recherche un parking avec une coordonnée GPS")
+	@ApiAuthor("Mathieu Passenaud")
+	@ApiVersion("0.1")
+	public Parking searchParkingByGPSPoint(@PathParam("latitude") double latitude, @PathParam("longitude") double longitude){
+		return ParkingDAO.getInstance().getParkingByPointGPS(new PointGPS(latitude, longitude));
+	}
 }

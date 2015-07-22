@@ -68,6 +68,26 @@ public class ParkingDAO {
 	}
 	
 	/**
+	 * Search a parking around a GPS point. Return a single parking.
+	 * 
+	 * @param gps
+	 * @return
+	 */
+	public Parking searchParkingByPointGPS(PointGPS gps){
+		List<Parking> parkings = Datastore.query(ParkingMeta.get()).sort(ParkingMeta.get().pointGPSLat.asc).sort(ParkingMeta.get().pointGPSLon.asc).asList();
+		
+		Parking nearestParking = new Parking(null, null, null, new PointGPS(Double.MAX_VALUE, Double.MAX_VALUE));
+		for(Parking parking : parkings){
+			if( Math.abs(parking.getPointGPSLat()-gps.getX()) < Math.abs(nearestParking.getPointGPSLat()-gps.getX()) &&
+					Math.abs(parking.getPointGPSLon()-gps.getY()) < Math.abs(nearestParking.getPointGPSLon()-gps.getY())){
+				nearestParking = parking;
+			}
+		}
+		
+		return nearestParking;
+	}
+	
+	/**
 	 * Put a parking to datastore. Generate key before
 	 * @param parking
 	 * @return key

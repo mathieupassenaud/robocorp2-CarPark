@@ -7,6 +7,58 @@
   "produceList" : [ ],
   "consumeList" : [ ],
   "methodList" : [ {
+    "name" : "getParkingByGPSPoint",
+    "path" : "get/{latitude}/{longitude}",
+    "doc" : "Récupère un modèle de parking avec sa coordonnée GPS",
+    "author" : "Mathieu Passenaud",
+    "version" : "0.1",
+    "produceList" : [ "application/json" ],
+    "consumeList" : [ "application/json" ],
+    "type" : "javax.ws.rs.GET",
+    "inputList" : [ {
+      "name" : "latitude",
+      "context" : "javax.ws.rs.PathParam",
+      "type" : "double",
+      "defaultValue" : ""
+    }, {
+      "name" : "longitude",
+      "context" : "javax.ws.rs.PathParam",
+      "type" : "double",
+      "defaultValue" : ""
+    } ],
+    "output" : {
+      "name" : "com.robocorp2.model.parking.Parking"
+    },
+    "subResource" : false,
+    "deprecated" : false,
+    "unimplemented" : false
+  }, {
+    "name" : "searchParkingByGPSPoint",
+    "path" : "search/{latitude}/{longitude}",
+    "doc" : "Recherche un parking avec une coordonnée GPS",
+    "author" : "Mathieu Passenaud",
+    "version" : "0.1",
+    "produceList" : [ "application/json" ],
+    "consumeList" : [ "application/json" ],
+    "type" : "javax.ws.rs.GET",
+    "inputList" : [ {
+      "name" : "latitude",
+      "context" : "javax.ws.rs.PathParam",
+      "type" : "double",
+      "defaultValue" : ""
+    }, {
+      "name" : "longitude",
+      "context" : "javax.ws.rs.PathParam",
+      "type" : "double",
+      "defaultValue" : ""
+    } ],
+    "output" : {
+      "name" : "com.robocorp2.model.parking.Parking"
+    },
+    "subResource" : false,
+    "deprecated" : false,
+    "unimplemented" : false
+  }, {
     "name" : "createParking",
     "path" : "create",
     "doc" : "Créé un nouveau parking et lui attribue une clé qui est retournée",
@@ -25,8 +77,8 @@
       "name" : "java.lang.String"
     },
     "subResource" : false,
-    "unimplemented" : false,
-    "deprecated" : false
+    "deprecated" : false,
+    "unimplemented" : false
   }, {
     "name" : "editParking",
     "path" : "edit/{key}",
@@ -51,8 +103,8 @@
       "name" : "com.robocorp2.model.parking.Parking"
     },
     "subResource" : false,
-    "unimplemented" : false,
-    "deprecated" : false
+    "deprecated" : false,
+    "unimplemented" : false
   }, {
     "name" : "getParkingByKey",
     "path" : "get/{key}",
@@ -72,35 +124,9 @@
       "name" : "com.robocorp2.model.parking.Parking"
     },
     "subResource" : false,
-    "unimplemented" : false,
-    "deprecated" : false
-  }, {
-    "name" : "getPArkingByGPSPoint",
-    "path" : "get/{latitude}/{longitude}",
-    "doc" : "Récupère un modèle de parking avec sa coordonnée GPS",
-    "author" : "Mathieu Passenaud",
-    "version" : "0.1",
-    "produceList" : [ "application/json" ],
-    "consumeList" : [ "application/json" ],
-    "type" : "javax.ws.rs.GET",
-    "inputList" : [ {
-      "name" : "latitude",
-      "context" : "javax.ws.rs.PathParam",
-      "type" : "double",
-      "defaultValue" : ""
-    }, {
-      "name" : "longitude",
-      "context" : "javax.ws.rs.PathParam",
-      "type" : "double",
-      "defaultValue" : ""
-    } ],
-    "output" : {
-      "name" : "com.robocorp2.model.parking.Parking"
-    },
-    "subResource" : false,
-    "unimplemented" : false,
-    "deprecated" : false
+    "deprecated" : false,
+    "unimplemented" : false
   } ],
-  "unimplemented" : false,
-  "deprecated" : false
+  "deprecated" : false,
+  "unimplemented" : false
 }
