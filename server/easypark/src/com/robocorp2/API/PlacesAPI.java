@@ -36,21 +36,25 @@ public class PlacesAPI {
 		for(Etage etage : parking.getEtages()){
 			if(etage.getKey().compareTo(Datastore.stringToKey(keyEtage))==0){
 				for(Place place : etage.getPlaces()){
-					if(place.getKey().compareTo(placeToModify.getKey())==0){
+					if(place.getNumeroDePlace() == (placeToModify.getNumeroDePlace())){
+						
+						place.setFree(placeToModify.isFree());
+						
 						// first remove the old object
-						List<Place> places = etage.getPlaces();
-						places.remove(place);
-						etage.setPlaces(places);
+						//List<Place> places = etage.getPlaces();
+						//places.remove(place);
+						//etage.setPlaces(places);
 						// put the new in place
-						etage.getPlaces().add(placeToModify);
+						//etage.getPlaces().add(placeToModify);
 						
 						//do the same
-						List<Etage> etages = parking.getEtages();
-						etages.remove(etage);
-						parking.setEtages(etages);
+						//List<Etage> etages = parking.getEtages();
+						//etages.remove(etage);
+						//parking.setEtages(etages);
 						
 						//save the object to database, with stats
 						ParkingDAO.getInstance().updateParkingWithStats(parking.getKey(), parking);
+						return;
 					}
 				}
 			}

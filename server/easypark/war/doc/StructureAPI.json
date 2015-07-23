@@ -7,6 +7,22 @@
   "produceList" : [ ],
   "consumeList" : [ ],
   "methodList" : [ {
+    "name" : "createCNAMParking",
+    "path" : "createCNAM",
+    "doc" : "Crée le parking CNAM",
+    "author" : "Mathieu Passenaud",
+    "version" : "0.1",
+    "produceList" : [ "application/JSON" ],
+    "consumeList" : [ ],
+    "type" : "javax.ws.rs.GET",
+    "inputList" : [ ],
+    "output" : {
+      "name" : ""
+    },
+    "subResource" : false,
+    "deprecated" : false,
+    "unimplemented" : false
+  }, {
     "name" : "getDemoParking",
     "path" : "parking",
     "doc" : "Retourne un modèle de parking",
@@ -82,22 +98,6 @@
     "inputList" : [ ],
     "output" : {
       "name" : "java.lang.String"
-    },
-    "subResource" : false,
-    "deprecated" : false,
-    "unimplemented" : false
-  }, {
-    "name" : "createCNAMParking",
-    "path" : "createCNAM",
-    "doc" : "Crée le parking CNAM",
-    "author" : "Mathieu Passenaud",
-    "version" : "0.1",
-    "produceList" : [ "application/JSON" ],
-    "consumeList" : [ ],
-    "type" : "javax.ws.rs.GET",
-    "inputList" : [ ],
-    "output" : {
-      "name" : ""
     },
     "subResource" : false,
     "deprecated" : false,

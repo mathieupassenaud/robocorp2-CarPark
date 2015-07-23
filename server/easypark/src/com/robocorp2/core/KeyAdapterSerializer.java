@@ -15,7 +15,6 @@ import java.lang.reflect.Type;
 
 import org.slim3.datastore.Datastore;
 
-@SuppressWarnings("rawtypes")
 public class KeyAdapterSerializer implements JsonSerializer<Key>, JsonDeserializer<Key>, InstanceCreator<Key>  {
   @Override
   public JsonElement serialize(Key key, Type type, JsonSerializationContext serialContext) {
