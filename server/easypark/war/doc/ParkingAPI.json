@@ -12,8 +12,8 @@
     "doc" : "Créé un nouveau parking et lui attribue une clé qui est retournée",
     "author" : "Mathieu Passenaud",
     "version" : "0.1",
-    "produceList" : [ "application/json" ],
-    "consumeList" : [ "application/json" ],
+    "produceList" : [ "application/json", "application/xml" ],
+    "consumeList" : [ "application/json", "application/xml" ],
     "type" : "javax.ws.rs.PUT",
     "inputList" : [ {
       "name" : "",
@@ -25,16 +25,37 @@
       "name" : "java.lang.String"
     },
     "subResource" : false,
-    "unimplemented" : false,
-    "deprecated" : false
+    "deprecated" : false,
+    "unimplemented" : false
+  }, {
+    "name" : "getParkingByKey",
+    "path" : "get/{key}",
+    "doc" : "Récupère un modèle de parking avec sa clé",
+    "author" : "Mathieu Passenaud",
+    "version" : "0.1",
+    "produceList" : [ "application/json", "application/xml" ],
+    "consumeList" : [ "application/json", "application/xml" ],
+    "type" : "javax.ws.rs.GET",
+    "inputList" : [ {
+      "name" : "key",
+      "context" : "javax.ws.rs.PathParam",
+      "type" : "java.lang.String",
+      "defaultValue" : ""
+    } ],
+    "output" : {
+      "name" : "java.lang.String"
+    },
+    "subResource" : false,
+    "deprecated" : false,
+    "unimplemented" : false
   }, {
     "name" : "editParking",
     "path" : "edit/{key}",
     "doc" : "Edite le modèle de parking, pour ajouter/enlever des places. Retourne le parking modifié",
     "author" : "Mathieu Passenaud",
     "version" : "0.1",
-    "produceList" : [ "application/json" ],
-    "consumeList" : [ "application/json" ],
+    "produceList" : [ "application/json", "application/xml" ],
+    "consumeList" : [ "application/json", "application/xml" ],
     "type" : "javax.ws.rs.POST",
     "inputList" : [ {
       "name" : "key",
@@ -48,40 +69,19 @@
       "defaultValue" : ""
     } ],
     "output" : {
-      "name" : "com.robocorp2.model.parking.Parking"
+      "name" : "java.lang.String"
     },
     "subResource" : false,
-    "unimplemented" : false,
-    "deprecated" : false
+    "deprecated" : false,
+    "unimplemented" : false
   }, {
-    "name" : "getParkingByKey",
-    "path" : "get/{key}",
-    "doc" : "Récupère un modèle de parking avec sa clé",
-    "author" : "Mathieu Passenaud",
-    "version" : "0.1",
-    "produceList" : [ "application/json" ],
-    "consumeList" : [ "application/json" ],
-    "type" : "javax.ws.rs.GET",
-    "inputList" : [ {
-      "name" : "key",
-      "context" : "javax.ws.rs.PathParam",
-      "type" : "java.lang.String",
-      "defaultValue" : ""
-    } ],
-    "output" : {
-      "name" : "com.robocorp2.model.parking.Parking"
-    },
-    "subResource" : false,
-    "unimplemented" : false,
-    "deprecated" : false
-  }, {
-    "name" : "getPArkingByGPSPoint",
+    "name" : "getParkingByGPSPoint",
     "path" : "get/{latitude}/{longitude}",
     "doc" : "Récupère un modèle de parking avec sa coordonnée GPS",
     "author" : "Mathieu Passenaud",
     "version" : "0.1",
-    "produceList" : [ "application/json" ],
-    "consumeList" : [ "application/json" ],
+    "produceList" : [ "application/json", "application/xml" ],
+    "consumeList" : [ "application/json", "application/xml" ],
     "type" : "javax.ws.rs.GET",
     "inputList" : [ {
       "name" : "latitude",
@@ -95,12 +95,38 @@
       "defaultValue" : ""
     } ],
     "output" : {
-      "name" : "com.robocorp2.model.parking.Parking"
+      "name" : "java.lang.String"
     },
     "subResource" : false,
-    "unimplemented" : false,
-    "deprecated" : false
+    "deprecated" : false,
+    "unimplemented" : false
+  }, {
+    "name" : "searchParkingByGPSPoint",
+    "path" : "search/{latitude}/{longitude}",
+    "doc" : "Recherche un parking avec une coordonnée GPS",
+    "author" : "Mathieu Passenaud",
+    "version" : "0.1",
+    "produceList" : [ "application/json", "application/xml" ],
+    "consumeList" : [ "application/json", "application/xml" ],
+    "type" : "javax.ws.rs.GET",
+    "inputList" : [ {
+      "name" : "latitude",
+      "context" : "javax.ws.rs.PathParam",
+      "type" : "double",
+      "defaultValue" : ""
+    }, {
+      "name" : "longitude",
+      "context" : "javax.ws.rs.PathParam",
+      "type" : "double",
+      "defaultValue" : ""
+    } ],
+    "output" : {
+      "name" : "java.lang.String"
+    },
+    "subResource" : false,
+    "deprecated" : false,
+    "unimplemented" : false
   } ],
-  "unimplemented" : false,
-  "deprecated" : false
+  "deprecated" : false,
+  "unimplemented" : false
 }

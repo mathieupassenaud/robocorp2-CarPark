@@ -17,7 +17,7 @@ import com.google.appengine.api.datastore.Key;
  *
  */
 @XmlRootElement
-@Model
+@Model(kind = "Camera")
 public class Camera implements Serializable{
 
 	private static final long serialVersionUID = 1L;
@@ -30,7 +30,7 @@ public class Camera implements Serializable{
 	private int focal;
 	public Camera(PointGPS point, double hauteur, int rotationInDegrees, int focal) {
 		super();
-		this.key = Datastore.createKey(this.getClass(), UUID.randomUUID().toString());
+		this.key = Datastore.createKey(Camera.class, UUID.randomUUID().toString());
 		this.point = point;
 		this.hauteur = hauteur;
 		this.rotationInDegrees = rotationInDegrees;

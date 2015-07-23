@@ -28,7 +28,6 @@
         <activity
             android:name=".MapsActivity"
             android:label="@string/title_activity_maps" >
-
         </activity>
         <activity
             android:name=".AccueilActivity"
@@ -46,6 +45,15 @@
         <activity
             android:name=".AutourDestinationActivity"
             android:label="@string/title_activity_autour_destination" >
+        </activity>
+        <activity
+            android:name=".util.LoadActivity"
+            android:label="@string/title_activity_load" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
     </application>
 

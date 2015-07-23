@@ -1,4 +1,11 @@
-<!-- Indices written at Wed, 15 Jul 2015 11:26:41 CEST -->
+<!-- Indices written at Thu, 23 Jul 2015 11:07:54 CEST -->
 
-<datastore-indexes/>
+<datastore-indexes>
 
+    <!-- Used 1 time in query history -->
+    <datastore-index kind="Parking" ancestor="false" source="auto">
+        <property name="pointGPSLat" direction="asc"/>
+        <property name="pointGPSLon" direction="asc"/>
+    </datastore-index>
+
+</datastore-indexes>

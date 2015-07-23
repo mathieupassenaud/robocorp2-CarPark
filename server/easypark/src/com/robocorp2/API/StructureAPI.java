@@ -6,6 +6,11 @@ import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 
+import com.google.appengine.api.datastore.Key;
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.robocorp2.DAO.ParkingDAO;
+import com.robocorp2.core.KeyAdapterSerializer;
 import com.robocorp2.model.parking.Camera;
 import com.robocorp2.model.parking.Etage;
 import com.robocorp2.model.parking.Parking;
@@ -21,14 +26,15 @@ import com.simplapi.jersey.doc.annotation.ApiVersion;
 @ApiAuthor("Mathieu Passenaud")
 @ApiVersion("0.1")
 public class StructureAPI {
-
+	public static Gson gson = (new GsonBuilder()).serializeNulls()
+			.setPrettyPrinting().registerTypeAdapter(Key.class, new KeyAdapterSerializer()).create();
 	@GET
 	@Path("parking")
 	@Produces("application/JSON")
 	@ApiDoc("Retourne un modèle de parking")
 	@ApiAuthor("Mathieu Passenaud")
 	@ApiVersion("0.1")
-	public Parking getDemoParking(){
+	public String getDemoParking(){
 		String nom = "Parking de démo";
 		String adresse = "Adresse - 31000 Toulouse";
 		ArrayList<Etage> etages = new ArrayList<Etage>();
@@ -47,7 +53,7 @@ public class StructureAPI {
 		
 		
 		Parking parking = new Parking(etages, nom, adresse, new PointGPS( 43.600000, 1.433333));
-		return parking;
+		return gson.toJson(parking);
 	}
 	
 	@GET
@@ -56,8 +62,8 @@ public class StructureAPI {
 	@ApiDoc("Retourne une place")
 	@ApiAuthor("Mathieu Passenaud")
 	@ApiVersion("0.1")
-	public Place getDemoPlace(){
-		return new Place(new PointGPS(1.0, 2.0), 1, 90, true);
+	public String getDemoPlace(){
+		return gson.toJson(new Place(new PointGPS(1.0, 2.0), 1, 90, true));
 	}
 	
 	@GET
@@ -66,7 +72,7 @@ public class StructureAPI {
 	@ApiDoc("Retourne un étage")
 	@ApiAuthor("Mathieu Passenaud")
 	@ApiVersion("0.1")
-	public Etage getDemoEtage(){
+	public String getDemoEtage(){
 		ArrayList<Place> places = new ArrayList<Place>();
 		ArrayList<Vecteur> chemins = new ArrayList<Vecteur>();
 		ArrayList<Camera> cameras = new ArrayList<Camera>(); 
@@ -78,7 +84,7 @@ public class StructureAPI {
 		chemins.add(new Vecteur(new PointGPS(4.0, 7.0), new PointGPS(9.0, 8.0)));
 		
 		cameras.add(new Camera(new PointGPS(1.0,1.0), 4, 90, 120));
-		return new Etage(places, chemins, cameras);
+		return gson.toJson(new Etage(places, chemins, cameras));
 	}
 	
 	@GET
@@ -87,8 +93,8 @@ public class StructureAPI {
 	@ApiDoc("Retourne un vecteur, utilisé pour les chemins")
 	@ApiAuthor("Mathieu Passenaud")
 	@ApiVersion("0.1")
-	public Vecteur getDemoVecteur(){
-		return new Vecteur(new PointGPS(2.0, 4.0), new PointGPS(4.0, 7.0));
+	public String getDemoVecteur(){
+		return gson.toJson(new Vecteur(new PointGPS(2.0, 4.0), new PointGPS(4.0, 7.0)));
 	}
 	
 	@GET
@@ -97,8 +103,33 @@ public class StructureAPI {
 	@ApiDoc("Retourne une caméra")
 	@ApiAuthor("Mathieu Passenaud")
 	@ApiVersion("0.1")
-	public Camera getDemoCamera(){
-		return new Camera(new PointGPS(1.0,1.0), 4, 90, 120);
+	public String getDemoCamera(){
+		return gson.toJson(new Camera(new PointGPS(1.0,1.0), 4, 90, 120));
+	}
+	
+	@GET
+	@Path("createCNAM")
+	@Produces("application/JSON")
+	@ApiDoc("Crée le parking CNAM")
+	@ApiAuthor("Mathieu Passenaud")
+	@ApiVersion("0.1")
+	public void createCNAMParking(){
+		ArrayList<Etage> etages = new ArrayList<Etage>();
+		ArrayList<Place> places = new ArrayList<Place>();
+		ArrayList<Camera> cameras = new ArrayList<Camera>();
+		ArrayList<Vecteur> chemins = new ArrayList<Vecteur>();
+		
+		for(int i=1; i<100; i++){
+			places.add(new Place(new PointGPS( 43.566566+(i*0.00002), 1.466449+(i*0.00002)), i, 90, true));
+		}
+		
+		cameras.add(new Camera(new PointGPS(43.566566, 1.466449), 3, 0, 120));
+		chemins.add(new Vecteur(new PointGPS(43.566566, 1.466449), new PointGPS( 43.566566+(100*0.00002), 1.466449+(100*0.00002))));
+		
+		etages.add(new Etage(places, chemins, cameras));
+		
+		Parking parkingCNAM = new Parking(etages, "Parking CNAM", "Université Paul Sabatier", new PointGPS(43.566791, 1.466735));
+		ParkingDAO.getInstance().saveParking(parkingCNAM);
 	}
 	
 }
