@@ -24,8 +24,9 @@ public class AccueilActivity extends ActionBarActivity {
         butAutourMoi.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(AccueilActivity.this, AutourDeMoiActivity.class);
-                startActivity(intent);
+                new UtilWebServices(getApplicationContext()).getParking();
+                //Intent intent = new Intent(AccueilActivity.this, AutourDeMoiActivity.class);
+                //startActivity(intent);
             }
         });
 
