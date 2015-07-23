@@ -35,9 +35,9 @@
       "name" : ""
     },
     "subResource" : false,
-    "unimplemented" : false,
-    "deprecated" : false
+    "deprecated" : false,
+    "unimplemented" : false
   } ],
-  "unimplemented" : false,
-  "deprecated" : false
+  "deprecated" : false,
+  "unimplemented" : false
 }
