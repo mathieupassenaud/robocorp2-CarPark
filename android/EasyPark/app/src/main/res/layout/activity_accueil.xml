@@ -8,13 +8,37 @@
     tools:context="com.easypark.easypark.AccueilActivity">
 
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true">
 
+
+
+
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/butAutourDesti"
+            android:background="@mipmap/pictoautourdemoiv2"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:layout_above="@+id/butPmr"
+            android:layout_alignLeft="@+id/butPmr"
+            android:layout_alignStart="@+id/butPmr"
+            android:layout_marginLeft="34dp"
+            android:layout_marginStart="34dp"
+            android:layout_marginBottom="39dp" />
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/butAutourMoi"
+            android:background="@mipmap/pictodestinationv2"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignBottom="@+id/butAutourDesti"
+            android:layout_alignRight="@+id/butPmr"
+            android:layout_alignEnd="@+id/butPmr"
+            android:layout_marginRight="26dp"
+            android:layout_marginEnd="26dp" />
 
         <ImageButton
             android:layout_width="wrap_content"
@@ -25,26 +49,6 @@
             android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true" />
 
-        <ImageButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/butAutourDesti"
-            android:background="@mipmap/pictoautourdemoiv2"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentTop="true"
-            android:layout_marginTop="114dp"
-            android:layout_toRightOf="@+id/butAutourMoi"
-            android:layout_toEndOf="@+id/butAutourMoi" />
 
-        <ImageButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/butAutourMoi"
-            android:background="@mipmap/pictodestinationv2"
-            android:layout_alignTop="@+id/butAutourDesti"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true" />
 
-    </RelativeLayout>
 </RelativeLayout>
