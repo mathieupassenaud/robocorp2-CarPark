@@ -26,13 +26,17 @@ public  class UtilWebServices {
     private static String URL_WS="http://1-dot-robocorp-1008.appspot.com/api/structure/parking/";
     private static String TAG="ws";
     private Context context;
+    Parking park = null;
+    final Gson gson;
    public UtilWebServices(Context context){
-    this.context=context;
+
+       this.context=context;
+        gson = new GsonBuilder().setPrettyPrinting().create();
    }
     public  Parking getParking(){
         String result;
-        Parking park = null;
-        final Gson gson = new GsonBuilder().setPrettyPrinting().create();
+
+
         ////ObjectMapp
         //new CallWs().execute();
         /*try {
@@ -76,7 +80,8 @@ public  class UtilWebServices {
                      //Log.d(TAG, "result"+responseBody.toString());
                      //Log.d(TAG, "result"+statusCode);
                      Toast.makeText(context, "OK", Toast.LENGTH_LONG).show();
-                     //Toast.makeText(context,reponse , Toast.LENGTH_LONG).show();
+                     park=gson.fromJson(reponse,Parking.class);
+                     Toast.makeText(context,park.toString() , Toast.LENGTH_LONG).show();
 
                  }
 
