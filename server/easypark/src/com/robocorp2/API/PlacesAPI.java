@@ -9,7 +9,11 @@ import javax.ws.rs.Produces;
 
 import org.slim3.datastore.Datastore;
 
+import com.google.appengine.api.datastore.Key;
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 import com.robocorp2.DAO.ParkingDAO;
+import com.robocorp2.core.KeyAdapterSerializer;
 import com.robocorp2.core.PlaceStatus;
 import com.robocorp2.model.parking.Etage;
 import com.robocorp2.model.parking.Parking;
@@ -24,6 +28,9 @@ import com.simplapi.jersey.doc.annotation.ApiVersion;
 @ApiVersion("0.1")
 public class PlacesAPI {
 
+	public static Gson gson = (new GsonBuilder()).serializeNulls()
+			.setPrettyPrinting().registerTypeAdapter(Key.class, new KeyAdapterSerializer()).create();
+	
 	@POST
 	@Path("update/{idParking}/{idEtage}")
 	@Consumes("Application/JSON")
@@ -70,17 +77,39 @@ public class PlacesAPI {
 	@ApiDoc("Récupère une place libre dans un parking")
 	@ApiAuthor("Mathieu Passenaud")
 	@ApiVersion("0.1")
-	public Place getAFreePlace(@PathParam("idParking") String keyParking){
+	public String getAFreePlace(@PathParam("idParking") String keyParking){
 		Parking parking = ParkingDAO.getInstance().getParkingByKey(Datastore.stringToKey(keyParking));
 		for(Etage etage : parking.getEtages()){
 			for(Place place : etage.getPlaces()){
 				if(place.isFree()){
 					place.setStatus(PlaceStatus.RESERVED);
 					ParkingDAO.getInstance().updateParkingWithStats(parking.getKey(), parking);
-					return place;
+					return gson.toJson(place);
 				}
 			}
 		}
-		return new Place();
+		return null;
 	}
+	
+	@GET
+	@Path("getFreePlace/{idParking}/{idEtage}/{idPlace}")
+	@Consumes("Application/JSON")
+	@Produces("Application/JSON")
+	@ApiDoc("Donne l'état d'une place")
+	@ApiAuthor("Mathieu Passenaud")
+	@ApiVersion("0.1")
+	public String getPlaceStatus(@PathParam("idParking") String keyParking, @PathParam("idEtage") String keyEtage, @PathParam("idPlace") String keyPlace){
+		Parking parking = ParkingDAO.getInstance().getParkingByKey(Datastore.stringToKey(keyParking));
+		for(Etage etage : parking.getEtages()){
+			if(etage.getKey().compareTo(Datastore.stringToKey(keyEtage))==0){
+				for(Place place : etage.getPlaces()){
+					if(place.getKey().compareTo(Datastore.stringToKey(keyPlace))==0){
+						return gson.toJson(place.getStatus());
+					}
+				}
+			}
+		}
+		return null;
+	}
+	
 }

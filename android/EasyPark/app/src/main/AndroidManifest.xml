@@ -34,6 +34,7 @@
             android:label="@string/title_activity_accueil" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
@@ -45,15 +46,17 @@
             android:name=".AutourDestinationActivity"
             android:label="@string/title_activity_autour_destination" >
         </activity>
-        <activity
+        <!--<activity
             android:name=".util.LoadActivity"
             android:label="@string/title_activity_load" >
-            <!--<intent-filter>
+            <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>-->
+            </intent-filter>
         </activity>
+            </intent-filter>
+        </activity>-->
     </application>
 
 </manifest>

@@ -17,7 +17,9 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.robocorp2.DAO.ParkingDAO;
 import com.robocorp2.core.KeyAdapterSerializer;
+import com.robocorp2.model.parking.Etage;
 import com.robocorp2.model.parking.Parking;
+import com.robocorp2.model.parking.Place;
 import com.robocorp2.model.parking.PointGPS;
 import com.simplapi.jersey.doc.annotation.ApiAuthor;
 import com.simplapi.jersey.doc.annotation.ApiDoc;
@@ -86,5 +88,25 @@ public class ParkingAPI {
 	@ApiVersion("0.1")
 	public String searchParkingByGPSPoint(@PathParam("latitude") double latitude, @PathParam("longitude") double longitude){
 		return gson.toJson(ParkingDAO.getInstance().searchParkingsByPointGPS(new PointGPS(latitude, longitude)));
+	}
+	
+	@GET
+	@Path("getFreePlace/{idParking}")
+	@Consumes("Application/JSON")
+	@Produces("Application/JSON")
+	@ApiDoc("Donne le nombre de places libres dans un parking")
+	@ApiAuthor("Mathieu Passenaud")
+	@ApiVersion("0.1")
+	public int getNumberFreePlaces(@PathParam("idParking") String keyParking){
+		int nbFreePlaces = 0;
+		Parking parking = ParkingDAO.getInstance().getParkingByKey(Datastore.stringToKey(keyParking));
+		for(Etage etage : parking.getEtages()){
+			for(Place place : etage.getPlaces()){
+				if(place.isFree()){
+					nbFreePlaces++;
+				}
+			}
+		}
+		return nbFreePlaces;
 	}
 }

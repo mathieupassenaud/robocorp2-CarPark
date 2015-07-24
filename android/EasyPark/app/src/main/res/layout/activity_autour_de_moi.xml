@@ -5,13 +5,14 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     android:paddingBottom="@dimen/activity_vertical_margin"
     tools:context="com.easypark.easypark.AutourDeMoiActivity"
->
+
+    android:background="@mipmap/fond">
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Vous pouvez choisir un parking sur GoogleMap ou appuyer sur le bouton Place la plus proche :"
+        android:text="Vous pouvez choisir un parking sur la carte ou appuyer sur le bouton Place la plus proche :"
         android:id="@+id/texExplain"
 
         android:layout_weight="0.11"
@@ -31,7 +32,8 @@
         android:layout_weight="0.05"
         android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
+        android:layout_alignParentEnd="true"
+        android:backgroundTint="#ff509b56" />
 
    <fragment xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
