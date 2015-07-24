@@ -19,7 +19,7 @@ public class AccueilActivity extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_accueil);
 
-        /*butAutourMoi = (Button)findViewById(R.id.butAutourMoi);
+        butAutourMoi = (Button)findViewById(R.id.butAutourMoi);
         butAutourMoi.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -36,7 +36,7 @@ public class AccueilActivity extends ActionBarActivity {
                 Intent intent = new Intent(AccueilActivity.this, AutourDestinationActivity.class);
                 startActivity(intent);
             }
-        });*/
+        });
     }
 
     @Override
