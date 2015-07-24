@@ -15,6 +15,7 @@ import com.google.gson.GsonBuilder;
 import com.robocorp2.DAO.ParkingDAO;
 import com.robocorp2.core.KeyAdapterSerializer;
 import com.robocorp2.core.PlaceStatus;
+import com.robocorp2.core.PlaceType;
 import com.robocorp2.model.parking.Etage;
 import com.robocorp2.model.parking.Parking;
 import com.robocorp2.model.parking.Place;
@@ -74,14 +75,45 @@ public class PlacesAPI {
 	@Path("getFreePlace/{idParking}")
 	@Consumes("Application/JSON")
 	@Produces("Application/JSON")
-	@ApiDoc("Récupère une place libre dans un parking")
+	@ApiDoc("Récupère une place libre du type NORMAL dans un parking")
 	@ApiAuthor("Mathieu Passenaud")
-	@ApiVersion("0.1")
+	@ApiVersion("0.2")
 	public String getAFreePlace(@PathParam("idParking") String keyParking){
 		Parking parking = ParkingDAO.getInstance().getParkingByKey(Datastore.stringToKey(keyParking));
 		for(Etage etage : parking.getEtages()){
 			for(Place place : etage.getPlaces()){
-				if(place.isFree()){
+				if(place.isFree() && place.getType().equals(PlaceType.NORMAL)){
+					place.setStatus(PlaceStatus.RESERVED);
+					ParkingDAO.getInstance().updateParkingWithStats(parking.getKey(), parking);
+					return gson.toJson(place);
+				}
+			}
+		}
+		return null;
+	}
+	
+	@GET
+	@Path("getFreePlace/{idParking}/{type}")
+	@Consumes("Application/JSON")
+	@Produces("Application/JSON")
+	@ApiDoc("Récupère une place libre du type (normal, family, PMR, moto) dans un parking")
+	@ApiAuthor("Mathieu Passenaud")
+	@ApiVersion("0.1")
+	public String getAFreeTypedPlace(@PathParam("idParking") String keyParking, @PathParam("type") String typeAsString){
+		PlaceType type = PlaceType.NORMAL; 
+		if(typeAsString.equals("normal")){
+			type = PlaceType.NORMAL;
+		}else if (typeAsString.equals("family")){
+			type = PlaceType.FAMILY;
+		}else if (typeAsString.equals("PMR")){
+			type = PlaceType.PMR;
+		}else if (typeAsString.equals("moto")){
+			type = PlaceType.MOTO;
+		}
+		Parking parking = ParkingDAO.getInstance().getParkingByKey(Datastore.stringToKey(keyParking));
+		for(Etage etage : parking.getEtages()){
+			for(Place place : etage.getPlaces()){
+				if(place.isFree() && place.getType().equals(type)){
 					place.setStatus(PlaceStatus.RESERVED);
 					ParkingDAO.getInstance().updateParkingWithStats(parking.getKey(), parking);
 					return gson.toJson(place);

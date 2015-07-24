@@ -30,8 +30,8 @@
       "name" : "java.lang.String"
     },
     "subResource" : false,
-    "unimplemented" : false,
-    "deprecated" : false
+    "deprecated" : false,
+    "unimplemented" : false
   }, {
     "name" : "searchParkingByGPSPoint",
     "path" : "search/{latitude}/{longitude}",
@@ -56,8 +56,8 @@
       "name" : "java.lang.String"
     },
     "subResource" : false,
-    "unimplemented" : false,
-    "deprecated" : false
+    "deprecated" : false,
+    "unimplemented" : false
   }, {
     "name" : "getNumberFreePlaces",
     "path" : "getFreePlace/{idParking}",
@@ -77,8 +77,8 @@
       "name" : "int"
     },
     "subResource" : false,
-    "unimplemented" : false,
-    "deprecated" : false
+    "deprecated" : false,
+    "unimplemented" : false
   }, {
     "name" : "createParking",
     "path" : "create",
@@ -98,8 +98,8 @@
       "name" : "java.lang.String"
     },
     "subResource" : false,
-    "unimplemented" : false,
-    "deprecated" : false
+    "deprecated" : false,
+    "unimplemented" : false
   }, {
     "name" : "editParking",
     "path" : "edit/{key}",
@@ -124,8 +124,8 @@
       "name" : "java.lang.String"
     },
     "subResource" : false,
-    "unimplemented" : false,
-    "deprecated" : false
+    "deprecated" : false,
+    "unimplemented" : false
   }, {
     "name" : "getParkingByKey",
     "path" : "get/{key}",
@@ -145,9 +145,9 @@
       "name" : "java.lang.String"
     },
     "subResource" : false,
-    "unimplemented" : false,
-    "deprecated" : false
+    "deprecated" : false,
+    "unimplemented" : false
   } ],
-  "unimplemented" : false,
-  "deprecated" : false
+  "deprecated" : false,
+  "unimplemented" : false
 }

@@ -40,9 +40,9 @@
   }, {
     "name" : "getAFreePlace",
     "path" : "getFreePlace/{idParking}",
-    "doc" : "Récupère une place libre dans un parking",
+    "doc" : "Récupère une place libre du type NORMAL dans un parking",
     "author" : "Mathieu Passenaud",
-    "version" : "0.1",
+    "version" : "0.2",
     "produceList" : [ "Application/JSON" ],
     "consumeList" : [ "Application/JSON" ],
     "type" : "javax.ws.rs.GET",
@@ -79,6 +79,32 @@
       "defaultValue" : ""
     }, {
       "name" : "idPlace",
+      "context" : "javax.ws.rs.PathParam",
+      "type" : "java.lang.String",
+      "defaultValue" : ""
+    } ],
+    "output" : {
+      "name" : "java.lang.String"
+    },
+    "subResource" : false,
+    "deprecated" : false,
+    "unimplemented" : false
+  }, {
+    "name" : "getAFreeTypedPlace",
+    "path" : "getFreePlace/{idParking}/{type}",
+    "doc" : "Récupère une place libre du type (normal, family, PMR, moto) dans un parking",
+    "author" : "Mathieu Passenaud",
+    "version" : "0.1",
+    "produceList" : [ "Application/JSON" ],
+    "consumeList" : [ "Application/JSON" ],
+    "type" : "javax.ws.rs.GET",
+    "inputList" : [ {
+      "name" : "idParking",
+      "context" : "javax.ws.rs.PathParam",
+      "type" : "java.lang.String",
+      "defaultValue" : ""
+    }, {
+      "name" : "type",
       "context" : "javax.ws.rs.PathParam",
       "type" : "java.lang.String",
       "defaultValue" : ""
