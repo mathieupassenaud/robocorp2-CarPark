@@ -30,8 +30,8 @@
       "name" : "java.lang.String"
     },
     "subResource" : false,
-    "deprecated" : false,
-    "unimplemented" : false
+    "unimplemented" : false,
+    "deprecated" : false
   }, {
     "name" : "searchParkingByGPSPoint",
     "path" : "search/{latitude}/{longitude}",
@@ -56,8 +56,29 @@
       "name" : "java.lang.String"
     },
     "subResource" : false,
-    "deprecated" : false,
-    "unimplemented" : false
+    "unimplemented" : false,
+    "deprecated" : false
+  }, {
+    "name" : "getNumberFreePlaces",
+    "path" : "getFreePlace/{idParking}",
+    "doc" : "Donne le nombre de places libres dans un parking",
+    "author" : "Mathieu Passenaud",
+    "version" : "0.1",
+    "produceList" : [ "Application/JSON" ],
+    "consumeList" : [ "Application/JSON" ],
+    "type" : "javax.ws.rs.GET",
+    "inputList" : [ {
+      "name" : "idParking",
+      "context" : "javax.ws.rs.PathParam",
+      "type" : "java.lang.String",
+      "defaultValue" : ""
+    } ],
+    "output" : {
+      "name" : "int"
+    },
+    "subResource" : false,
+    "unimplemented" : false,
+    "deprecated" : false
   }, {
     "name" : "createParking",
     "path" : "create",
@@ -77,8 +98,8 @@
       "name" : "java.lang.String"
     },
     "subResource" : false,
-    "deprecated" : false,
-    "unimplemented" : false
+    "unimplemented" : false,
+    "deprecated" : false
   }, {
     "name" : "editParking",
     "path" : "edit/{key}",
@@ -103,8 +124,8 @@
       "name" : "java.lang.String"
     },
     "subResource" : false,
-    "deprecated" : false,
-    "unimplemented" : false
+    "unimplemented" : false,
+    "deprecated" : false
   }, {
     "name" : "getParkingByKey",
     "path" : "get/{key}",
@@ -124,9 +145,9 @@
       "name" : "java.lang.String"
     },
     "subResource" : false,
-    "deprecated" : false,
-    "unimplemented" : false
+    "unimplemented" : false,
+    "deprecated" : false
   } ],
-  "deprecated" : false,
-  "unimplemented" : false
+  "unimplemented" : false,
+  "deprecated" : false
 }
