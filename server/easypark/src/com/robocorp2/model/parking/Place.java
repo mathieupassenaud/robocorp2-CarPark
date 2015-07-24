@@ -9,6 +9,7 @@ import org.slim3.datastore.Datastore;
 import org.slim3.datastore.Model;
 
 import com.google.appengine.api.datastore.Key;
+import com.robocorp2.core.PlaceStatus;
 
 /**
  * 
@@ -30,7 +31,7 @@ public class Place implements Serializable{
 	@Attribute(lob = true)
 	private PointGPS point;
 	private int rotation;
-	private boolean free;
+	private PlaceStatus status;
 	
 	public Place(){
 		
@@ -41,13 +42,13 @@ public class Place implements Serializable{
 	 * @param rotation
 	 * @param free
 	 */
-	public Place(PointGPS point, int numero, int rotation, boolean free) {
+	public Place(PointGPS point, int numero, int rotation, PlaceStatus status) {
 		super();
 		this.key = Datastore.createKey(Place.class, numero);
 		this.point = point;
 		this.numeroDePlace = numero;
 		this.rotation = rotation;
-		this.free = free;
+		this.status = status;
 	}
 	
 	
@@ -87,17 +88,26 @@ public class Place implements Serializable{
 	public void setRotation(int rotation) {
 		this.rotation = rotation;
 	}
+	
+	
 	/**
-	 * @return the free
+	 * @return the status
 	 */
-	public boolean isFree() {
-		return free;
+	public PlaceStatus getStatus() {
+		return status;
 	}
 	/**
-	 * @param free the free to set
+	 * @param status the status to set
 	 */
-	public void setFree(boolean free) {
-		this.free = free;
+	public void setStatus(PlaceStatus status) {
+		this.status = status;
+	}
+	
+	public boolean isFree(){
+		if(this.status.equals(PlaceStatus.FREE)){
+			return true;
+		}
+		return false;
 	}
 	/**
 	 * @return the numeroDePlace
