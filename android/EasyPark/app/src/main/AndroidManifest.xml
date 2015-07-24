@@ -46,7 +46,8 @@
             android:name=".AutourDestinationActivity"
             android:label="@string/title_activity_autour_destination" >
         </activity>
-       <!-- <activity
+        <!--
+        <activity
             android:name=".util.LoadActivity"
             android:label="@string/title_activity_load" >
             <intent-filter>
@@ -54,7 +55,8 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>-->
+        </activity>
+        -->
     </application>
 
 </manifest>
