@@ -7,6 +7,58 @@
   "produceList" : [ ],
   "consumeList" : [ ],
   "methodList" : [ {
+    "name" : "getParkingByGPSPoint",
+    "path" : "get/{latitude}/{longitude}",
+    "doc" : "Récupère un modèle de parking avec sa coordonnée GPS",
+    "author" : "Mathieu Passenaud",
+    "version" : "0.1",
+    "produceList" : [ "application/json", "application/xml" ],
+    "consumeList" : [ "application/json", "application/xml" ],
+    "type" : "javax.ws.rs.GET",
+    "inputList" : [ {
+      "name" : "latitude",
+      "context" : "javax.ws.rs.PathParam",
+      "type" : "double",
+      "defaultValue" : ""
+    }, {
+      "name" : "longitude",
+      "context" : "javax.ws.rs.PathParam",
+      "type" : "double",
+      "defaultValue" : ""
+    } ],
+    "output" : {
+      "name" : "java.lang.String"
+    },
+    "subResource" : false,
+    "deprecated" : false,
+    "unimplemented" : false
+  }, {
+    "name" : "searchParkingByGPSPoint",
+    "path" : "search/{latitude}/{longitude}",
+    "doc" : "Recherche une liste de parkings les plus proches (max 5) avec une coordonnée GPS",
+    "author" : "Mathieu Passenaud",
+    "version" : "0.1",
+    "produceList" : [ "application/json", "application/xml" ],
+    "consumeList" : [ "application/json", "application/xml" ],
+    "type" : "javax.ws.rs.GET",
+    "inputList" : [ {
+      "name" : "latitude",
+      "context" : "javax.ws.rs.PathParam",
+      "type" : "double",
+      "defaultValue" : ""
+    }, {
+      "name" : "longitude",
+      "context" : "javax.ws.rs.PathParam",
+      "type" : "double",
+      "defaultValue" : ""
+    } ],
+    "output" : {
+      "name" : "java.lang.String"
+    },
+    "subResource" : false,
+    "deprecated" : false,
+    "unimplemented" : false
+  }, {
     "name" : "createParking",
     "path" : "create",
     "doc" : "Créé un nouveau parking et lui attribue une clé qui est retournée",
@@ -19,27 +71,6 @@
       "name" : "",
       "context" : "",
       "type" : "com.robocorp2.model.parking.Parking",
-      "defaultValue" : ""
-    } ],
-    "output" : {
-      "name" : "java.lang.String"
-    },
-    "subResource" : false,
-    "deprecated" : false,
-    "unimplemented" : false
-  }, {
-    "name" : "getParkingByKey",
-    "path" : "get/{key}",
-    "doc" : "Récupère un modèle de parking avec sa clé",
-    "author" : "Mathieu Passenaud",
-    "version" : "0.1",
-    "produceList" : [ "application/json", "application/xml" ],
-    "consumeList" : [ "application/json", "application/xml" ],
-    "type" : "javax.ws.rs.GET",
-    "inputList" : [ {
-      "name" : "key",
-      "context" : "javax.ws.rs.PathParam",
-      "type" : "java.lang.String",
       "defaultValue" : ""
     } ],
     "output" : {
@@ -75,49 +106,18 @@
     "deprecated" : false,
     "unimplemented" : false
   }, {
-    "name" : "getParkingByGPSPoint",
-    "path" : "get/{latitude}/{longitude}",
-    "doc" : "Récupère un modèle de parking avec sa coordonnée GPS",
+    "name" : "getParkingByKey",
+    "path" : "get/{key}",
+    "doc" : "Récupère un modèle de parking avec sa clé",
     "author" : "Mathieu Passenaud",
     "version" : "0.1",
     "produceList" : [ "application/json", "application/xml" ],
     "consumeList" : [ "application/json", "application/xml" ],
     "type" : "javax.ws.rs.GET",
     "inputList" : [ {
-      "name" : "latitude",
+      "name" : "key",
       "context" : "javax.ws.rs.PathParam",
-      "type" : "double",
-      "defaultValue" : ""
-    }, {
-      "name" : "longitude",
-      "context" : "javax.ws.rs.PathParam",
-      "type" : "double",
-      "defaultValue" : ""
-    } ],
-    "output" : {
-      "name" : "java.lang.String"
-    },
-    "subResource" : false,
-    "deprecated" : false,
-    "unimplemented" : false
-  }, {
-    "name" : "searchParkingByGPSPoint",
-    "path" : "search/{latitude}/{longitude}",
-    "doc" : "Recherche un parking avec une coordonnée GPS",
-    "author" : "Mathieu Passenaud",
-    "version" : "0.1",
-    "produceList" : [ "application/json", "application/xml" ],
-    "consumeList" : [ "application/json", "application/xml" ],
-    "type" : "javax.ws.rs.GET",
-    "inputList" : [ {
-      "name" : "latitude",
-      "context" : "javax.ws.rs.PathParam",
-      "type" : "double",
-      "defaultValue" : ""
-    }, {
-      "name" : "longitude",
-      "context" : "javax.ws.rs.PathParam",
-      "type" : "double",
+      "type" : "java.lang.String",
       "defaultValue" : ""
     } ],
     "output" : {

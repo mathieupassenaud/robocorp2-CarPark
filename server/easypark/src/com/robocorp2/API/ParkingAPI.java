@@ -81,10 +81,10 @@ public class ParkingAPI {
 	@Path("search/{latitude}/{longitude}")
 	@Produces({ MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML })
 	@Consumes({ MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML })
-	@ApiDoc("Recherche un parking avec une coordonnée GPS")
+	@ApiDoc("Recherche une liste de parkings les plus proches (max 5) avec une coordonnée GPS")
 	@ApiAuthor("Mathieu Passenaud")
 	@ApiVersion("0.1")
 	public String searchParkingByGPSPoint(@PathParam("latitude") double latitude, @PathParam("longitude") double longitude){
-		return gson.toJson(ParkingDAO.getInstance().searchParkingByPointGPS(new PointGPS(latitude, longitude)));
+		return gson.toJson(ParkingDAO.getInstance().searchParkingsByPointGPS(new PointGPS(latitude, longitude)));
 	}
 }

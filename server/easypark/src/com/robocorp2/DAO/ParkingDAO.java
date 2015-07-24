@@ -1,5 +1,6 @@
 package com.robocorp2.DAO;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -73,18 +74,24 @@ public class ParkingDAO {
 	 * @param gps
 	 * @return
 	 */
-	public Parking searchParkingByPointGPS(PointGPS gps){
+	public List<Parking> searchParkingsByPointGPS(PointGPS gps){
 		List<Parking> parkings = Datastore.query(ParkingMeta.get()).sort(ParkingMeta.get().pointGPSLat.asc).sort(ParkingMeta.get().pointGPSLon.asc).asList();
 		
+		List<Parking> nearestParkings = new ArrayList<Parking>();
+		for(int i = 0 ; i < 5 ; i ++){
+			
 		Parking nearestParking = new Parking(null, "test", "test", new PointGPS(Double.MAX_VALUE, Double.MAX_VALUE));
 		for(Parking parking : parkings){
 			if( Math.abs(parking.getPointGPSLat()-gps.getX()) < Math.abs(nearestParking.getPointGPSLat()-gps.getX()) &&
 					Math.abs(parking.getPointGPSLon()-gps.getY()) < Math.abs(nearestParking.getPointGPSLon()-gps.getY())){
 				nearestParking = parking;
+				nearestParkings.add(parking);
+				parkings.remove(parking);
 			}
 		}
+		}
 		
-		return nearestParking;
+		return nearestParkings;
 	}
 	
 	/**
