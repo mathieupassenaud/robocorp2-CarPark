@@ -7,33 +7,27 @@
     android:background="@mipmap/fond"
     tools:context="com.easypark.easypark.AccueilActivity">
 
-
-
-
-
-
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/butAutourMoi"
+            android:background="@mipmap/pictoautourdemoiv2"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:layout_toEndOf="@+id/butAutourDesti"
+            android:layout_marginTop="105dp"
+            android:layout_alignParentTop="true"
+            android:layout_toRightOf="@+id/butAutourDesti" />
 
         <ImageButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/butAutourDesti"
-            android:background="@mipmap/pictoautourdemoiv2"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentEnd="true"
-            android:layout_toEndOf="@+id/butAutourMoi"
-            android:layout_marginTop="105dp"
-            android:layout_alignParentTop="true"
-            android:layout_toRightOf="@+id/butAutourMoi" />
-
-        <ImageButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/butAutourMoi"
             android:background="@mipmap/pictodestinationv2"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
-            android:layout_alignTop="@+id/butAutourDesti"
-            android:layout_alignBottom="@+id/butAutourDesti" />
+            android:layout_alignTop="@+id/butAutourMoi"
+            android:layout_alignBottom="@+id/butAutourMoi" />
 
         <ImageButton
             android:layout_width="wrap_content"
@@ -45,7 +39,6 @@
             android:layout_below="@+id/butAutourDesti"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="59dp" />
-
 
 
 
