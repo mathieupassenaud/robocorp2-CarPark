@@ -19,31 +19,29 @@
         <ImageButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/imageButton"
+            android:id="@+id/butPmr"
             android:background="@mipmap/pmr"
+            android:layout_marginBottom="69dp"
             android:layout_alignParentBottom="true"
-            android:layout_centerHorizontal="true"
-            android:layout_marginBottom="71dp" />
+            android:layout_centerHorizontal="true" />
 
         <ImageButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/butAutourDesti"
-            android:background="@mipmap/pictoautourdemoi"
+            android:background="@mipmap/pictoautourdemoiv2"
             android:layout_alignParentRight="true"
             android:layout_alignParentEnd="true"
             android:layout_alignParentTop="true"
-            android:layout_alignLeft="@+id/imageButton"
-            android:layout_alignStart="@+id/imageButton"
-            android:layout_marginLeft="33dp"
-            android:layout_marginStart="33dp"
-            android:layout_marginTop="114dp" />
+            android:layout_marginTop="114dp"
+            android:layout_toRightOf="@+id/butAutourMoi"
+            android:layout_toEndOf="@+id/butAutourMoi" />
 
         <ImageButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/butAutourMoi"
-            android:background="@mipmap/pictodestination"
+            android:background="@mipmap/pictodestinationv2"
             android:layout_alignTop="@+id/butAutourDesti"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true" />
