@@ -7,19 +7,20 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 
 
 public class AccueilActivity extends ActionBarActivity {
 
-    Button butAutourMoi;
-    Button butAutourDesti;
+    ImageButton butAutourMoi;
+    ImageButton butAutourDesti;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_accueil);
 
-        butAutourMoi = (Button)findViewById(R.id.butAutourMoi);
+        butAutourMoi = (ImageButton)findViewById(R.id.butAutourMoi);
         butAutourMoi.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -29,7 +30,7 @@ public class AccueilActivity extends ActionBarActivity {
             }
         });
 
-        butAutourDesti = (Button)findViewById(R.id.butAutourDesti);
+        butAutourDesti = (ImageButton)findViewById(R.id.butAutourDesti);
         butAutourDesti.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
