@@ -1,64 +1,41 @@
 package com.easypark.easypark;
 
-import android.content.Context;
-import android.location.Location;
-import android.location.LocationManager;
-import android.support.v4.app.FragmentActivity;
+import android.content.Intent;
 import android.os.Bundle;
+import android.support.v4.app.FragmentActivity;
 import android.util.Log;
 
-import com.google.android.gms.common.ConnectionResult;
-import com.google.android.gms.common.api.GoogleApiClient;
-import com.google.android.gms.location.LocationServices;
+import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
+import com.google.android.maps.MapControlleur;
 
-public class MapsActivity extends FragmentActivity implements
-        GoogleApiClient.ConnectionCallbacks, GoogleApiClient.OnConnectionFailedListener {
+public class MapsActivity extends FragmentActivity   {
 
     private GoogleMap mMap; // Might be null if Google Play services APK is not available.
     private double latitude;
     private double longitude;
     private String TAG ="MAP";
-    GoogleApiClient mGoogleApiClient;
-    Location mLastLocation;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_maps);
-        buildGoogleApiClient();
          Log.d(TAG,"start,,,,");
-        /*LocationManager locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
-        Log.d(TAG, locationManager.toString());
-        Location loc =locationManager.getLastKnownLocation(LocationManager.GPS_PROVIDER);
-        if (loc==null){
-            loc =locationManager.getLastKnownLocation(LocationManager.NETWORK_PROVIDER);
-            Log.d(TAG,"loc "+loc.toString());
-        }
-        if (loc!=null){
-            latitude=loc.getLatitude();
-            longitude=loc.getLongitude();
-        }else{
-            latitude=0;
-            longitude=0;
-        }*/
+        Intent intent = getIntent();
+        latitude = intent.getDoubleExtra("latitude",300);
+        longitude = intent.getDoubleExtra("longitude",300);
 
         setUpMapIfNeeded();
 
     }
-    protected synchronized void buildGoogleApiClient() {
-        Log.d(TAG,"i,n");
-         mGoogleApiClient = new GoogleApiClient.Builder(this)
-                .addConnectionCallbacks(this)
-                .addOnConnectionFailedListener(this)
-                .addApi(LocationServices.API)
-                .build();
-    }
+
     @Override
     protected void onResume() {
         super.onResume();
+
         setUpMapIfNeeded();
     }
 
@@ -84,8 +61,9 @@ public class MapsActivity extends FragmentActivity implements
             mMap = ((SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.map))
                     .getMap();
             // Check if we were successful in obtaining the map.
+
             if (mMap != null) {
-                setUpMap();
+               setUpMap();
             }
         }
     }
@@ -97,28 +75,15 @@ public class MapsActivity extends FragmentActivity implements
      * This should only be called once and when we are sure that {@link #mMap} is not null.
      */
     private void setUpMap() {
-        mMap.addMarker(new MarkerOptions().position(new LatLng(latitude, longitude)).title("Marker"));
+
+        mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(latitude, longitude), 18.0f));
+        MapController mc = mapView.getController();
+        mc.setZoom(17);
+        //mMap.animateCamera(CameraUpdateFactory.zoomTo(20f));
+        mMap.addMarker(new MarkerOptions().position(new LatLng(latitude, longitude)).title("COUCOU"));
+       // mMap.getMyLocation();
     }
 
-    @Override
-    public void onConnected(Bundle bundle) {
-        mLastLocation = LocationServices.FusedLocationApi.getLastLocation(
-                mGoogleApiClient);
-        Log.d(TAG,mLastLocation.toString());
-        if (mLastLocation != null) {
-            latitude=mLastLocation.getLatitude();
-            longitude=mLastLocation.getLongitude();
-            Log.d(TAG,latitude+";"+longitude);
-        }
-    }
 
-    @Override
-    public void onConnectionSuspended(int i) {
 
-    }
-
-    @Override
-    public void onConnectionFailed(ConnectionResult connectionResult) {
-
-    }
 }

@@ -10,6 +10,7 @@ import org.slim3.datastore.Model;
 
 import com.google.appengine.api.datastore.Key;
 import com.robocorp2.core.PlaceStatus;
+import com.robocorp2.core.PlaceType;
 
 /**
  * 
@@ -32,6 +33,7 @@ public class Place implements Serializable{
 	private PointGPS point;
 	private int rotation;
 	private PlaceStatus status;
+	private PlaceType type;
 	
 	public Place(){
 		
@@ -120,6 +122,18 @@ public class Place implements Serializable{
 	 */
 	public void setNumeroDePlace(int numeroDePlace) {
 		this.numeroDePlace = numeroDePlace;
+	}
+	/**
+	 * @return the type
+	 */
+	public PlaceType getType() {
+		return type;
+	}
+	/**
+	 * @param type the type to set
+	 */
+	public void setType(PlaceType type) {
+		this.type = type;
 	}
 	
 	

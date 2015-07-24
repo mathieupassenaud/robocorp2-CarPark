@@ -1,24 +1,26 @@
 package com.easypark.easypark;
 
+
 import android.content.Intent;
+import android.support.v4.app.FragmentManager;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 
-public class AutourDeMoiActivity extends ActionBarActivity {
+public class AutourDeMoiActivity extends AppCompatActivity {
 
     Button butPlusProche;
-
+    public static FragmentManager fragmentManager;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_autour_de_moi);
-
-
         butPlusProche = (Button)findViewById(R.id.butPlusProche);
         butPlusProche.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -26,6 +28,8 @@ public class AutourDeMoiActivity extends ActionBarActivity {
 
             }
         });
+        fragmentManager = getSupportFragmentManager();
+
     }
 
     @Override
