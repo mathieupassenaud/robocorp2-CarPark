@@ -16,7 +16,10 @@
         android:id="@+id/texExplain"
 
         android:layout_weight="0.11"
-        android:layout_alignParentTop="true" />
+        android:layout_alignParentTop="true"
+        android:textSize="20dp"
+        android:textIsSelectable="false"
+        android:paddingBottom="10dp" />
 
     <FrameLayout
         android:layout_width="match_parent"
