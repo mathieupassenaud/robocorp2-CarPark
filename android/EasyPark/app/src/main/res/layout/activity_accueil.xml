@@ -20,12 +20,10 @@
             android:background="@mipmap/pictoautourdemoiv2"
             android:layout_alignParentRight="true"
             android:layout_alignParentEnd="true"
-            android:layout_above="@+id/butPmr"
-            android:layout_alignLeft="@+id/butPmr"
-            android:layout_alignStart="@+id/butPmr"
-            android:layout_marginLeft="34dp"
-            android:layout_marginStart="34dp"
-            android:layout_marginBottom="39dp" />
+            android:layout_toEndOf="@+id/butAutourMoi"
+            android:layout_marginTop="105dp"
+            android:layout_alignParentTop="true"
+            android:layout_toRightOf="@+id/butAutourMoi" />
 
         <ImageButton
             android:layout_width="wrap_content"
@@ -34,20 +32,21 @@
             android:background="@mipmap/pictodestinationv2"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
-            android:layout_alignBottom="@+id/butAutourDesti"
-            android:layout_alignRight="@+id/butPmr"
-            android:layout_alignEnd="@+id/butPmr"
-            android:layout_marginRight="26dp"
-            android:layout_marginEnd="26dp" />
+            android:layout_alignTop="@+id/butAutourDesti"
+            android:layout_alignBottom="@+id/butAutourDesti" />
 
         <ImageButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/butPmr"
-            android:background="@mipmap/pmr"
-            android:layout_marginBottom="69dp"
-            android:layout_alignParentBottom="true"
-            android:layout_centerHorizontal="true" />
+            android:background="@mipmap/pictopmrv2"
+            android:focusableInTouchMode="true"
+            android:focusable="true"
+            android:layout_below="@+id/butAutourDesti"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="59dp" />
+
+
 
 
 
