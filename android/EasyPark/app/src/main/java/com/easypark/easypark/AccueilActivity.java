@@ -19,13 +19,13 @@ public class AccueilActivity extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_accueil);
 
-        /*butAutourMoi = (Button)findViewById(R.id.butAutourMoi);
+        butAutourMoi = (Button)findViewById(R.id.butAutourMoi);
         butAutourMoi.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                new UtilWebServices(getApplicationContext()).getParking();
-                //Intent intent = new Intent(AccueilActivity.this, AutourDeMoiActivity.class);
-                //startActivity(intent);
+                //new UtilWebServices(getApplicationContext()).getParking();
+                Intent intent = new Intent(AccueilActivity.this, AutourDeMoiActivity.class);
+                startActivity(intent);
             }
         });
 
@@ -36,7 +36,7 @@ public class AccueilActivity extends ActionBarActivity {
                 Intent intent = new Intent(AccueilActivity.this, AutourDestinationActivity.class);
                 startActivity(intent);
             }
-        });*/
+        });
     }
 
     @Override

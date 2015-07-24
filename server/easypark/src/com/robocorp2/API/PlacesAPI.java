@@ -1,8 +1,7 @@
 package com.robocorp2.API;
 
-import java.util.List;
-
 import javax.ws.rs.Consumes;
+import javax.ws.rs.GET;
 import javax.ws.rs.POST;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
@@ -11,6 +10,7 @@ import javax.ws.rs.Produces;
 import org.slim3.datastore.Datastore;
 
 import com.robocorp2.DAO.ParkingDAO;
+import com.robocorp2.core.PlaceStatus;
 import com.robocorp2.model.parking.Etage;
 import com.robocorp2.model.parking.Parking;
 import com.robocorp2.model.parking.Place;
@@ -38,7 +38,7 @@ public class PlacesAPI {
 				for(Place place : etage.getPlaces()){
 					if(place.getNumeroDePlace() == (placeToModify.getNumeroDePlace())){
 						
-						place.setFree(placeToModify.isFree());
+						place.setStatus(placeToModify.getStatus());
 						
 						// first remove the old object
 						//List<Place> places = etage.getPlaces();
@@ -60,5 +60,27 @@ public class PlacesAPI {
 			}
 		}
 		
+	}
+	
+	
+	@GET
+	@Path("getFreePlace/{idParking}")
+	@Consumes("Application/JSON")
+	@Produces("Application/JSON")
+	@ApiDoc("Récupère une place libre dans un parking")
+	@ApiAuthor("Mathieu Passenaud")
+	@ApiVersion("0.1")
+	public Place getAFreePlace(@PathParam("idParking") String keyParking){
+		Parking parking = ParkingDAO.getInstance().getParkingByKey(Datastore.stringToKey(keyParking));
+		for(Etage etage : parking.getEtages()){
+			for(Place place : etage.getPlaces()){
+				if(place.isFree()){
+					place.setStatus(PlaceStatus.RESERVED);
+					ParkingDAO.getInstance().updateParkingWithStats(parking.getKey(), parking);
+					return place;
+				}
+			}
+		}
+		return new Place();
 	}
 }

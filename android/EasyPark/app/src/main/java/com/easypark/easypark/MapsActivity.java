@@ -7,23 +7,30 @@ import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
 import android.util.Log;
 
+import com.google.android.gms.common.ConnectionResult;
+import com.google.android.gms.common.api.GoogleApiClient;
+import com.google.android.gms.location.LocationServices;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 
-public class MapsActivity extends FragmentActivity {
+public class MapsActivity extends FragmentActivity implements
+        GoogleApiClient.ConnectionCallbacks, GoogleApiClient.OnConnectionFailedListener {
 
     private GoogleMap mMap; // Might be null if Google Play services APK is not available.
     private double latitude;
     private double longitude;
     private String TAG ="MAP";
+    GoogleApiClient mGoogleApiClient;
+    Location mLastLocation;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_maps);
-        setUpMapIfNeeded();
-        LocationManager locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
+        buildGoogleApiClient();
+         Log.d(TAG,"start,,,,");
+        /*LocationManager locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
         Log.d(TAG, locationManager.toString());
         Location loc =locationManager.getLastKnownLocation(LocationManager.GPS_PROVIDER);
         if (loc==null){
@@ -36,10 +43,19 @@ public class MapsActivity extends FragmentActivity {
         }else{
             latitude=0;
             longitude=0;
-        }
+        }*/
+
+        setUpMapIfNeeded();
 
     }
-
+    protected synchronized void buildGoogleApiClient() {
+        Log.d(TAG,"i,n");
+         mGoogleApiClient = new GoogleApiClient.Builder(this)
+                .addConnectionCallbacks(this)
+                .addOnConnectionFailedListener(this)
+                .addApi(LocationServices.API)
+                .build();
+    }
     @Override
     protected void onResume() {
         super.onResume();
@@ -82,5 +98,27 @@ public class MapsActivity extends FragmentActivity {
      */
     private void setUpMap() {
         mMap.addMarker(new MarkerOptions().position(new LatLng(latitude, longitude)).title("Marker"));
+    }
+
+    @Override
+    public void onConnected(Bundle bundle) {
+        mLastLocation = LocationServices.FusedLocationApi.getLastLocation(
+                mGoogleApiClient);
+        Log.d(TAG,mLastLocation.toString());
+        if (mLastLocation != null) {
+            latitude=mLastLocation.getLatitude();
+            longitude=mLastLocation.getLongitude();
+            Log.d(TAG,latitude+";"+longitude);
+        }
+    }
+
+    @Override
+    public void onConnectionSuspended(int i) {
+
+    }
+
+    @Override
+    public void onConnectionFailed(ConnectionResult connectionResult) {
+
     }
 }
