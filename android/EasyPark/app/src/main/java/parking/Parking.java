@@ -124,5 +124,7 @@ public class Parking implements Serializable {
 		this.pointGPSLon = pointGPSLon;
 	}
 
-	
+	public String toString(){
+        return this.nom+" "+this.adresse+": "+this.getPointGPSLat()+", "+this.getPointGPSLon();
+    }
 }
