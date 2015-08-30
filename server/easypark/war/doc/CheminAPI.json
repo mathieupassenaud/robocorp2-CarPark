@@ -14,8 +14,13 @@
     "version" : "0.1",
     "produceList" : [ ],
     "consumeList" : [ ],
-    "type" : "",
-    "inputList" : [ ],
+    "type" : "javax.ws.rs.GET",
+    "inputList" : [ {
+      "name" : "idPlace",
+      "context" : "javax.ws.rs.PathParam",
+      "type" : "int",
+      "defaultValue" : ""
+    } ],
     "output" : {
       "name" : "[Lcom.robocorp2.model.parking.Vecteur;"
     },

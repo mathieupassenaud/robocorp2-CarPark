@@ -30,6 +30,7 @@ public class Vecteur implements Serializable {
 	private PointGPS pointFin;
 	
 	
+	
 	public Vecteur(){
 		
 	}
@@ -82,5 +83,13 @@ public class Vecteur implements Serializable {
 		this.pointFin = pointFin;
 	}
 	
+	public double getNorme(){
+		double x = Math.abs(pointFin.getX() - pointDebut.getX());
+		double y = Math.abs(pointFin.getY() - pointDebut.getY());
+				
+		double norme = Math.sqrt(x*x + y*y);
+				
+		return norme;
+	}
 	
 }
