@@ -1,0 +1,1133 @@
+{
+  "key": "0",
+  "etages": [
+    {
+      "key": "ag9zfnJvYm9jb3JwLTEwMDhyEAsSBUV0YWdlIgVldGFnZQw",
+      "places": [
+        {
+          "key": "ag9zfnJvYm9jb3JwLTEwMDhyCwsSBVBsYWNlGAEM",
+          "numeroDePlace": 1,
+          "point": {
+            "key": "ag9zfnJvYm9jb3JwLTEwMDhyKgsSCFBvaW50R1BTIhw0My41NjY1ODYsMS40NjY0Njg5OTk5OTk5OTk4DA",
+            "x": 43.566586,
+            "y": 1.4664689999999998
+          },
+          "rotation": 90,
+          "free": false
+        },
+        {
+          "key": "ag9zfnJvYm9jb3JwLTEwMDhyCwsSBVBsYWNlGAIM",
+          "numeroDePlace": 2,
+          "point": {
+            "key": "ag9zfnJvYm9jb3JwLTEwMDhyIAsSCFBvaW50R1BTIhI0My41NjY2MDYsMS40NjY0ODkM",
+            "x": 43.566606,
+            "y": 1.466489
+          },
+          "rotation": 90,
+          "free": true
+        },
+        {
+          "key": "ag9zfnJvYm9jb3JwLTEwMDhyCwsSBVBsYWNlGAMM",
+          "numeroDePlace": 3,
+          "point": {
+            "key": "ag9zfnJvYm9jb3JwLTEwMDhyKgsSCFBvaW50R1BTIhw0My41NjY2MjYsMS40NjY1MDg5OTk5OTk5OTk4DA",
+            "x": 43.566626,
+            "y": 1.4665089999999998
+          },
+          "rotation": 90,
+          "free": true
+        },
+        {
+          "key": "ag9zfnJvYm9jb3JwLTEwMDhyCwsSBVBsYWNlGAQM",
+          "numeroDePlace": 4,
+          "point": {
+            "key": "ag9zfnJvYm9jb3JwLTEwMDhyIAsSCFBvaW50R1BTIhI0My41NjY2NDYsMS40NjY1MjkM",
+            "x": 43.566646,
+            "y": 1.466529
+          },
+          "rotation": 90,
+          "free": true
+        },
+        {
+          "key": "ag9zfnJvYm9jb3JwLTEwMDhyCwsSBVBsYWNlGAUM",
+          "numeroDePlace": 5,
+          "point": {
+            "key": "ag9zfnJvYm9jb3JwLTEwMDhyMwsSCFBvaW50R1BTIiU0My41NjY2NjYwMDAwMDAwMDUsMS40NjY1NDg5OTk5OTk5OTk5DA",
+            "x": 43.566666000000005,
+            "y": 1.4665489999999999
+          },
+          "rotation": 90,
+          "free": true
+        },
+        {
+          "key": "ag9zfnJvYm9jb3JwLTEwMDhyCwsSBVBsYWNlGAYM",
+          "numeroDePlace": 6,
+          "point": {
+            "key": "ag9zfnJvYm9jb3JwLTEwMDhyMwsSCFBvaW50R1BTIiU0My41NjY2ODYwMDAwMDAwMDQsMS40NjY1Njg5OTk5OTk5OTk4DA",
+            "x": 43.566686000000004,
+            "y": 1.4665689999999998
+          },
+          "rotation": 90,
+          "free": true
+        },
+        {
+          "key": "ag9zfnJvYm9jb3JwLTEwMDhyCwsSBVBsYWNlGAcM",
+          "numeroDePlace": 7,
+          "point": {
+            "key": "ag9zfnJvYm9jb3JwLTEwMDhyIAsSCFBvaW50R1BTIhI0My41NjY3MDYsMS40NjY1ODkM",
+            "x": 43.566706,
+            "y": 1.466589
+          },
+          "rotation": 90,
+          "free": true
+        },
+        {
+          "key": "ag9zfnJvYm9jb3JwLTEwMDhyCwsSBVBsYWNlGAgM",
+          "numeroDePlace": 8,
+          "point": {
+            "key": "ag9zfnJvYm9jb3JwLTEwMDhyKgsSCFBvaW50R1BTIhw0My41NjY3MjYsMS40NjY2MDg5OTk5OTk5OTk4DA",
+            "x": 43.566726,
+            "y": 1.4666089999999998
+          },
+          "rotation": 90,
+          "free": true
+        },
+        {
+          "key": "ag9zfnJvYm9jb3JwLTEwMDhyCwsSBVBsYWNlGAkM",
+          "numeroDePlace": 9,
+          "point": {
+            "key": "ag9zfnJvYm9jb3JwLTEwMDhyIAsSCFBvaW50R1BTIhI0My41NjY3NDYsMS40NjY2MjkM",
+            "x": 43.566746,
+            "y": 1.466629
+          },
+          "rotation": 90,
+          "free": true
+        },
+        {
+          "key": "ag9zfnJvYm9jb3JwLTEwMDhyCwsSBVBsYWNlGAoM",
+          "numeroDePlace": 10,
+          "point": {
+            "key": "ag9zfnJvYm9jb3JwLTEwMDhyKgsSCFBvaW50R1BTIhw0My41NjY3NjYsMS40NjY2NDg5OTk5OTk5OTk5DA",
+            "x": 43.566766,
+            "y": 1.4666489999999999
+          },
+          "rotation": 90,
+          "free": true
+        },
+        {
+          "key": "ag9zfnJvYm9jb3JwLTEwMDhyCwsSBVBsYWNlGAsM",
+          "numeroDePlace": 11,
+          "point": {
+            "key": "ag9zfnJvYm9jb3JwLTEwMDhyIAsSCFBvaW50R1BTIhI0My41NjY3ODYsMS40NjY2NjkM",
+            "x": 43.566786,
+            "y": 1.466669
+          },
+          "rotation": 90,
+          "free": true
+        },
+        {
+          "key": "ag9zfnJvYm9jb3JwLTEwMDhyCwsSBVBsYWNlGAwM",
+          "numeroDePlace": 12,
+          "point": {
+            "key": "ag9zfnJvYm9jb3JwLTEwMDhyIAsSCFBvaW50R1BTIhI0My41NjY4MDYsMS40NjY2ODkM",
+            "x": 43.566806,
+            "y": 1.466689
+          },
+          "rotation": 90,
+          "free": true
+        },
+        {
+          "key": "ag9zfnJvYm9jb3JwLTEwMDhyCwsSBVBsYWNlGA0M",
+          "numeroDePlace": 13,
+          "point": {
+            "key": "ag9zfnJvYm9jb3JwLTEwMDhyKgsSCFBvaW50R1BTIhw0My41NjY4MjYsMS40NjY3MDg5OTk5OTk5OTk4DA",
+            "x": 43.566826,
+            "y": 1.4667089999999998
+          },
+          "rotation": 90,
+          "free": true
+        },
+        {
+          "key": "ag9zfnJvYm9jb3JwLTEwMDhyCwsSBVBsYWNlGA4M",
+          "numeroDePlace": 14,
+          "point": {
+            "key": "ag9zfnJvYm9jb3JwLTEwMDhyIAsSCFBvaW50R1BTIhI0My41NjY4NDYsMS40NjY3MjkM",
+            "x": 43.566846,
+            "y": 1.466729
+          },
+          "rotation": 90,
+          "free": true
+        },
+        {
+          "key": "ag9zfnJvYm9jb3JwLTEwMDhyCwsSBVBsYWNlGA8M",
+          "numeroDePlace": 15,
+          "point": {
+            "key": "ag9zfnJvYm9jb3JwLTEwMDhyMwsSCFBvaW50R1BTIiU0My41NjY4NjYwMDAwMDAwMDUsMS40NjY3NDg5OTk5OTk5OTk5DA",
+            "x": 43.566866000000005,
+            "y": 1.4667489999999999
+          },
+          "rotation": 90,
+          "free": true
+        },
+        {
+          "key": "ag9zfnJvYm9jb3JwLTEwMDhyCwsSBVBsYWNlGBAM",
+          "numeroDePlace": 16,
+          "point": {
+            "key": "ag9zfnJvYm9jb3JwLTEwMDhyKQsSCFBvaW50R1BTIhs0My41NjY4ODYwMDAwMDAwMDQsMS40NjY3NjkM",
+            "x": 43.566886000000004,
+            "y": 1.466769
+          },
+          "rotation": 90,
+          "free": true
+        },
+        {
+          "key": "ag9zfnJvYm9jb3JwLTEwMDhyCwsSBVBsYWNlGBEM",
+          "numeroDePlace": 17,
+          "point": {
+            "key": "ag9zfnJvYm9jb3JwLTEwMDhyIAsSCFBvaW50R1BTIhI0My41NjY5MDYsMS40NjY3ODkM",
+            "x": 43.566906,
+            "y": 1.466789
+          },
+          "rotation": 90,
+          "free": true
+        },
+        {
+          "key": "ag9zfnJvYm9jb3JwLTEwMDhyCwsSBVBsYWNlGBIM",
+          "numeroDePlace": 18,
+          "point": {
+            "key": "ag9zfnJvYm9jb3JwLTEwMDhyKgsSCFBvaW50R1BTIhw0My41NjY5MjYsMS40NjY4MDg5OTk5OTk5OTk4DA",
+            "x": 43.566926,
+            "y": 1.4668089999999998
+          },
+          "rotation": 90,
+          "free": true
+        },
+        {
+          "key": "ag9zfnJvYm9jb3JwLTEwMDhyCwsSBVBsYWNlGBMM",
+          "numeroDePlace": 19,
+          "point": {
+            "key": "ag9zfnJvYm9jb3JwLTEwMDhyIAsSCFBvaW50R1BTIhI0My41NjY5NDYsMS40NjY4MjkM",
+            "x": 43.566946,
+            "y": 1.466829
+          },
+          "rotation": 90,
+          "free": true
+        },
+        {
+          "key": "ag9zfnJvYm9jb3JwLTEwMDhyCwsSBVBsYWNlGBQM",
+          "numeroDePlace": 20,
+          "point": {
+            "key": "ag9zfnJvYm9jb3JwLTEwMDhyKgsSCFBvaW50R1BTIhw0My41NjY5NjYsMS40NjY4NDg5OTk5OTk5OTk4DA",
+            "x": 43.566966,
+            "y": 1.4668489999999998
+          },
+          "rotation": 90,
+          "free": true
+        },
+        {
+          "key": "ag9zfnJvYm9jb3JwLTEwMDhyCwsSBVBsYWNlGBUM",
+          "numeroDePlace": 21,
+          "point": {
+            "key": "ag9zfnJvYm9jb3JwLTEwMDhyIAsSCFBvaW50R1BTIhI0My41NjY5ODYsMS40NjY4NjkM",
+            "x": 43.566986,
+            "y": 1.466869
+          },
+          "rotation": 90,
+          "free": true
+        },
+        {
+          "key": "ag9zfnJvYm9jb3JwLTEwMDhyCwsSBVBsYWNlGBYM",
+          "numeroDePlace": 22,
+          "point": {
+            "key": "ag9zfnJvYm9jb3JwLTEwMDhyKgsSCFBvaW50R1BTIhw0My41NjcwMDYsMS40NjY4ODg5OTk5OTk5OTk5DA",
+            "x": 43.567006,
+            "y": 1.4668889999999999
+          },
+          "rotation": 90,
+          "free": true
+        },
+        {
+          "key": "ag9zfnJvYm9jb3JwLTEwMDhyCwsSBVBsYWNlGBcM",
+          "numeroDePlace": 23,
+          "point": {
+            "key": "ag9zfnJvYm9jb3JwLTEwMDhyKgsSCFBvaW50R1BTIhw0My41NjcwMjYsMS40NjY5MDg5OTk5OTk5OTk4DA",
+            "x": 43.567026,
+            "y": 1.4669089999999998
+          },
+          "rotation": 90,
+          "free": true
+        },
+        {
+          "key": "ag9zfnJvYm9jb3JwLTEwMDhyCwsSBVBsYWNlGBgM",
+          "numeroDePlace": 24,
+          "point": {
+            "key": "ag9zfnJvYm9jb3JwLTEwMDhyKQsSCFBvaW50R1BTIhs0My41NjcwNDYwMDAwMDAwMDUsMS40NjY5MjkM",
+            "x": 43.567046000000005,
+            "y": 1.466929
+          },
+          "rotation": 90,
+          "free": true
+        },
+        {
+          "key": "ag9zfnJvYm9jb3JwLTEwMDhyCwsSBVBsYWNlGBkM",
+          "numeroDePlace": 25,
+          "point": {
+            "key": "ag9zfnJvYm9jb3JwLTEwMDhyMwsSCFBvaW50R1BTIiU0My41NjcwNjYwMDAwMDAwMDQsMS40NjY5NDg5OTk5OTk5OTk4DA",
+            "x": 43.567066000000004,
+            "y": 1.4669489999999998
+          },
+          "rotation": 90,
+          "free": true
+        },
+        {
+          "key": "ag9zfnJvYm9jb3JwLTEwMDhyCwsSBVBsYWNlGBoM",
+          "numeroDePlace": 26,
+          "point": {
+            "key": "ag9zfnJvYm9jb3JwLTEwMDhyIAsSCFBvaW50R1BTIhI0My41NjcwODYsMS40NjY5NjkM",
+            "x": 43.567086,
+            "y": 1.466969
+          },
+          "rotation": 90,
+          "free": true
+        },
+        {
+          "key": "ag9zfnJvYm9jb3JwLTEwMDhyCwsSBVBsYWNlGBsM",
+          "numeroDePlace": 27,
+          "point": {
+            "key": "ag9zfnJvYm9jb3JwLTEwMDhyKgsSCFBvaW50R1BTIhw0My41NjcxMDYsMS40NjY5ODg5OTk5OTk5OTk5DA",
+            "x": 43.567106,
+            "y": 1.4669889999999999
+          },
+          "rotation": 90,
+          "free": true
+        },
+        {
+          "key": "ag9zfnJvYm9jb3JwLTEwMDhyCwsSBVBsYWNlGBwM",
+          "numeroDePlace": 28,
+          "point": {
+            "key": "ag9zfnJvYm9jb3JwLTEwMDhyKgsSCFBvaW50R1BTIhw0My41NjcxMjYsMS40NjcwMDg5OTk5OTk5OTk4DA",
+            "x": 43.567126,
+            "y": 1.4670089999999998
+          },
+          "rotation": 90,
+          "free": true
+        },
+        {
+          "key": "ag9zfnJvYm9jb3JwLTEwMDhyCwsSBVBsYWNlGB0M",
+          "numeroDePlace": 29,
+          "point": {
+            "key": "ag9zfnJvYm9jb3JwLTEwMDhyIAsSCFBvaW50R1BTIhI0My41NjcxNDYsMS40NjcwMjkM",
+            "x": 43.567146,
+            "y": 1.467029
+          },
+          "rotation": 90,
+          "free": true
+        },
+        {
+          "key": "ag9zfnJvYm9jb3JwLTEwMDhyCwsSBVBsYWNlGB4M",
+          "numeroDePlace": 30,
+          "point": {
+            "key": "ag9zfnJvYm9jb3JwLTEwMDhyKgsSCFBvaW50R1BTIhw0My41NjcxNjYsMS40NjcwNDg5OTk5OTk5OTk4DA",
+            "x": 43.567166,
+            "y": 1.4670489999999998
+          },
+          "rotation": 90,
+          "free": true
+        },
+        {
+          "key": "ag9zfnJvYm9jb3JwLTEwMDhyCwsSBVBsYWNlGB8M",
+          "numeroDePlace": 31,
+          "point": {
+            "key": "ag9zfnJvYm9jb3JwLTEwMDhyIAsSCFBvaW50R1BTIhI0My41NjcxODYsMS40NjcwNjkM",
+            "x": 43.567186,
+            "y": 1.467069
+          },
+          "rotation": 90,
+          "free": true
+        },
+        {
+          "key": "ag9zfnJvYm9jb3JwLTEwMDhyCwsSBVBsYWNlGCAM",
+          "numeroDePlace": 32,
+          "point": {
+            "key": "ag9zfnJvYm9jb3JwLTEwMDhyKgsSCFBvaW50R1BTIhw0My41NjcyMDYsMS40NjcwODg5OTk5OTk5OTk5DA",
+            "x": 43.567206,
+            "y": 1.4670889999999999
+          },
+          "rotation": 90,
+          "free": true
+        },
+        {
+          "key": "ag9zfnJvYm9jb3JwLTEwMDhyCwsSBVBsYWNlGCEM",
+          "numeroDePlace": 33,
+          "point": {
+            "key": "ag9zfnJvYm9jb3JwLTEwMDhyKQsSCFBvaW50R1BTIhs0My41NjcyMjYwMDAwMDAwMDUsMS40NjcxMDkM",
+            "x": 43.567226000000005,
+            "y": 1.467109
+          },
+          "rotation": 90,
+          "free": true
+        },
+        {
+          "key": "ag9zfnJvYm9jb3JwLTEwMDhyCwsSBVBsYWNlGCIM",
+          "numeroDePlace": 34,
+          "point": {
+            "key": "ag9zfnJvYm9jb3JwLTEwMDhyKQsSCFBvaW50R1BTIhs0My41NjcyNDYwMDAwMDAwMDQsMS40NjcxMjkM",
+            "x": 43.567246000000004,
+            "y": 1.467129
+          },
+          "rotation": 90,
+          "free": true
+        },
+        {
+          "key": "ag9zfnJvYm9jb3JwLTEwMDhyCwsSBVBsYWNlGCMM",
+          "numeroDePlace": 35,
+          "point": {
+            "key": "ag9zfnJvYm9jb3JwLTEwMDhyMwsSCFBvaW50R1BTIiU0My41NjcyNjYwMDAwMDAwMDQsMS40NjcxNDg5OTk5OTk5OTk4DA",
+            "x": 43.567266000000004,
+            "y": 1.4671489999999998
+          },
+          "rotation": 90,
+          "free": true
+        },
+        {
+          "key": "ag9zfnJvYm9jb3JwLTEwMDhyCwsSBVBsYWNlGCQM",
+          "numeroDePlace": 36,
+          "point": {
+            "key": "ag9zfnJvYm9jb3JwLTEwMDhyIAsSCFBvaW50R1BTIhI0My41NjcyODYsMS40NjcxNjkM",
+            "x": 43.567286,
+            "y": 1.467169
+          },
+          "rotation": 90,
+          "free": true
+        },
+        {
+          "key": "ag9zfnJvYm9jb3JwLTEwMDhyCwsSBVBsYWNlGCUM",
+          "numeroDePlace": 37,
+          "point": {
+            "key": "ag9zfnJvYm9jb3JwLTEwMDhyKgsSCFBvaW50R1BTIhw0My41NjczMDYsMS40NjcxODg5OTk5OTk5OTk5DA",
+            "x": 43.567306,
+            "y": 1.4671889999999999
+          },
+          "rotation": 90,
+          "free": true
+        },
+        {
+          "key": "ag9zfnJvYm9jb3JwLTEwMDhyCwsSBVBsYWNlGCYM",
+          "numeroDePlace": 38,
+          "point": {
+            "key": "ag9zfnJvYm9jb3JwLTEwMDhyIAsSCFBvaW50R1BTIhI0My41NjczMjYsMS40NjcyMDkM",
+            "x": 43.567326,
+            "y": 1.467209
+          },
+          "rotation": 90,
+          "free": true
+        },
+        {
+          "key": "ag9zfnJvYm9jb3JwLTEwMDhyCwsSBVBsYWNlGCcM",
+          "numeroDePlace": 39,
+          "point": {
+            "key": "ag9zfnJvYm9jb3JwLTEwMDhyIAsSCFBvaW50R1BTIhI0My41NjczNDYsMS40NjcyMjkM",
+            "x": 43.567346,
+            "y": 1.467229
+          },
+          "rotation": 90,
+          "free": true
+        },
+        {
+          "key": "ag9zfnJvYm9jb3JwLTEwMDhyCwsSBVBsYWNlGCgM",
+          "numeroDePlace": 40,
+          "point": {
+            "key": "ag9zfnJvYm9jb3JwLTEwMDhyKgsSCFBvaW50R1BTIhw0My41NjczNjYsMS40NjcyNDg5OTk5OTk5OTk4DA",
+            "x": 43.567366,
+            "y": 1.4672489999999998
+          },
+          "rotation": 90,
+          "free": true
+        },
+        {
+          "key": "ag9zfnJvYm9jb3JwLTEwMDhyCwsSBVBsYWNlGCkM",
+          "numeroDePlace": 41,
+          "point": {
+            "key": "ag9zfnJvYm9jb3JwLTEwMDhyIAsSCFBvaW50R1BTIhI0My41NjczODYsMS40NjcyNjkM",
+            "x": 43.567386,
+            "y": 1.467269
+          },
+          "rotation": 90,
+          "free": true
+        },
+        {
+          "key": "ag9zfnJvYm9jb3JwLTEwMDhyCwsSBVBsYWNlGCoM",
+          "numeroDePlace": 42,
+          "point": {
+            "key": "ag9zfnJvYm9jb3JwLTEwMDhyKgsSCFBvaW50R1BTIhw0My41Njc0MDYsMS40NjcyODg5OTk5OTk5OTk4DA",
+            "x": 43.567406,
+            "y": 1.4672889999999998
+          },
+          "rotation": 90,
+          "free": true
+        },
+        {
+          "key": "ag9zfnJvYm9jb3JwLTEwMDhyCwsSBVBsYWNlGCsM",
+          "numeroDePlace": 43,
+          "point": {
+            "key": "ag9zfnJvYm9jb3JwLTEwMDhyKQsSCFBvaW50R1BTIhs0My41Njc0MjYwMDAwMDAwMDUsMS40NjczMDkM",
+            "x": 43.567426000000005,
+            "y": 1.467309
+          },
+          "rotation": 90,
+          "free": true
+        },
+        {
+          "key": "ag9zfnJvYm9jb3JwLTEwMDhyCwsSBVBsYWNlGCwM",
+          "numeroDePlace": 44,
+          "point": {
+            "key": "ag9zfnJvYm9jb3JwLTEwMDhyMwsSCFBvaW50R1BTIiU0My41Njc0NDYwMDAwMDAwMDQsMS40NjczMjg5OTk5OTk5OTk5DA",
+            "x": 43.567446000000004,
+            "y": 1.4673289999999999
+          },
+          "rotation": 90,
+          "free": true
+        },
+        {
+          "key": "ag9zfnJvYm9jb3JwLTEwMDhyCwsSBVBsYWNlGC0M",
+          "numeroDePlace": 45,
+          "point": {
+            "key": "ag9zfnJvYm9jb3JwLTEwMDhyKgsSCFBvaW50R1BTIhw0My41Njc0NjYsMS40NjczNDg5OTk5OTk5OTk4DA",
+            "x": 43.567466,
+            "y": 1.4673489999999998
+          },
+          "rotation": 90,
+          "free": true
+        },
+        {
+          "key": "ag9zfnJvYm9jb3JwLTEwMDhyCwsSBVBsYWNlGC4M",
+          "numeroDePlace": 46,
+          "point": {
+            "key": "ag9zfnJvYm9jb3JwLTEwMDhyIAsSCFBvaW50R1BTIhI0My41Njc0ODYsMS40NjczNjkM",
+            "x": 43.567486,
+            "y": 1.467369
+          },
+          "rotation": 90,
+          "free": true
+        },
+        {
+          "key": "ag9zfnJvYm9jb3JwLTEwMDhyCwsSBVBsYWNlGC8M",
+          "numeroDePlace": 47,
+          "point": {
+            "key": "ag9zfnJvYm9jb3JwLTEwMDhyKgsSCFBvaW50R1BTIhw0My41Njc1MDYsMS40NjczODg5OTk5OTk5OTk4DA",
+            "x": 43.567506,
+            "y": 1.4673889999999998
+          },
+          "rotation": 90,
+          "free": true
+        },
+        {
+          "key": "ag9zfnJvYm9jb3JwLTEwMDhyCwsSBVBsYWNlGDAM",
+          "numeroDePlace": 48,
+          "point": {
+            "key": "ag9zfnJvYm9jb3JwLTEwMDhyIAsSCFBvaW50R1BTIhI0My41Njc1MjYsMS40Njc0MDkM",
+            "x": 43.567526,
+            "y": 1.467409
+          },
+          "rotation": 90,
+          "free": true
+        },
+        {
+          "key": "ag9zfnJvYm9jb3JwLTEwMDhyCwsSBVBsYWNlGDEM",
+          "numeroDePlace": 49,
+          "point": {
+            "key": "ag9zfnJvYm9jb3JwLTEwMDhyKgsSCFBvaW50R1BTIhw0My41Njc1NDYsMS40Njc0Mjg5OTk5OTk5OTk5DA",
+            "x": 43.567546,
+            "y": 1.4674289999999999
+          },
+          "rotation": 90,
+          "free": true
+        },
+        {
+          "key": "ag9zfnJvYm9jb3JwLTEwMDhyCwsSBVBsYWNlGDIM",
+          "numeroDePlace": 50,
+          "point": {
+            "key": "ag9zfnJvYm9jb3JwLTEwMDhyKgsSCFBvaW50R1BTIhw0My41Njc1NjYsMS40Njc0NDg5OTk5OTk5OTk4DA",
+            "x": 43.567566,
+            "y": 1.4674489999999998
+          },
+          "rotation": 90,
+          "free": true
+        },
+        {
+          "key": "ag9zfnJvYm9jb3JwLTEwMDhyCwsSBVBsYWNlGDMM",
+          "numeroDePlace": 51,
+          "point": {
+            "key": "ag9zfnJvYm9jb3JwLTEwMDhyIAsSCFBvaW50R1BTIhI0My41Njc1ODYsMS40Njc0NjkM",
+            "x": 43.567586,
+            "y": 1.467469
+          },
+          "rotation": 90,
+          "free": true
+        },
+        {
+          "key": "ag9zfnJvYm9jb3JwLTEwMDhyCwsSBVBsYWNlGDQM",
+          "numeroDePlace": 52,
+          "point": {
+            "key": "ag9zfnJvYm9jb3JwLTEwMDhyMwsSCFBvaW50R1BTIiU0My41Njc2MDYwMDAwMDAwMDUsMS40Njc0ODg5OTk5OTk5OTk4DA",
+            "x": 43.567606000000005,
+            "y": 1.4674889999999998
+          },
+          "rotation": 90,
+          "free": true
+        },
+        {
+          "key": "ag9zfnJvYm9jb3JwLTEwMDhyCwsSBVBsYWNlGDUM",
+          "numeroDePlace": 53,
+          "point": {
+            "key": "ag9zfnJvYm9jb3JwLTEwMDhyKQsSCFBvaW50R1BTIhs0My41Njc2MjYwMDAwMDAwMDQsMS40Njc1MDkM",
+            "x": 43.567626000000004,
+            "y": 1.467509
+          },
+          "rotation": 90,
+          "free": true
+        },
+        {
+          "key": "ag9zfnJvYm9jb3JwLTEwMDhyCwsSBVBsYWNlGDYM",
+          "numeroDePlace": 54,
+          "point": {
+            "key": "ag9zfnJvYm9jb3JwLTEwMDhyKgsSCFBvaW50R1BTIhw0My41Njc2NDYsMS40Njc1Mjg5OTk5OTk5OTk5DA",
+            "x": 43.567646,
+            "y": 1.4675289999999999
+          },
+          "rotation": 90,
+          "free": true
+        },
+        {
+          "key": "ag9zfnJvYm9jb3JwLTEwMDhyCwsSBVBsYWNlGDcM",
+          "numeroDePlace": 55,
+          "point": {
+            "key": "ag9zfnJvYm9jb3JwLTEwMDhyIAsSCFBvaW50R1BTIhI0My41Njc2NjYsMS40Njc1NDkM",
+            "x": 43.567666,
+            "y": 1.467549
+          },
+          "rotation": 90,
+          "free": true
+        },
+        {
+          "key": "ag9zfnJvYm9jb3JwLTEwMDhyCwsSBVBsYWNlGDgM",
+          "numeroDePlace": 56,
+          "point": {
+            "key": "ag9zfnJvYm9jb3JwLTEwMDhyIAsSCFBvaW50R1BTIhI0My41Njc2ODYsMS40Njc1NjkM",
+            "x": 43.567686,
+            "y": 1.467569
+          },
+          "rotation": 90,
+          "free": true
+        },
+        {
+          "key": "ag9zfnJvYm9jb3JwLTEwMDhyCwsSBVBsYWNlGDkM",
+          "numeroDePlace": 57,
+          "point": {
+            "key": "ag9zfnJvYm9jb3JwLTEwMDhyKgsSCFBvaW50R1BTIhw0My41Njc3MDYsMS40Njc1ODg5OTk5OTk5OTk4DA",
+            "x": 43.567706,
+            "y": 1.4675889999999998
+          },
+          "rotation": 90,
+          "free": true
+        },
+        {
+          "key": "ag9zfnJvYm9jb3JwLTEwMDhyCwsSBVBsYWNlGDoM",
+          "numeroDePlace": 58,
+          "point": {
+            "key": "ag9zfnJvYm9jb3JwLTEwMDhyIAsSCFBvaW50R1BTIhI0My41Njc3MjYsMS40Njc2MDkM",
+            "x": 43.567726,
+            "y": 1.467609
+          },
+          "rotation": 90,
+          "free": true
+        },
+        {
+          "key": "ag9zfnJvYm9jb3JwLTEwMDhyCwsSBVBsYWNlGDsM",
+          "numeroDePlace": 59,
+          "point": {
+            "key": "ag9zfnJvYm9jb3JwLTEwMDhyKgsSCFBvaW50R1BTIhw0My41Njc3NDYsMS40Njc2Mjg5OTk5OTk5OTk5DA",
+            "x": 43.567746,
+            "y": 1.4676289999999999
+          },
+          "rotation": 90,
+          "free": true
+        },
+        {
+          "key": "ag9zfnJvYm9jb3JwLTEwMDhyCwsSBVBsYWNlGDwM",
+          "numeroDePlace": 60,
+          "point": {
+            "key": "ag9zfnJvYm9jb3JwLTEwMDhyIAsSCFBvaW50R1BTIhI0My41Njc3NjYsMS40Njc2NDkM",
+            "x": 43.567766,
+            "y": 1.467649
+          },
+          "rotation": 90,
+          "free": true
+        },
+        {
+          "key": "ag9zfnJvYm9jb3JwLTEwMDhyCwsSBVBsYWNlGD0M",
+          "numeroDePlace": 61,
+          "point": {
+            "key": "ag9zfnJvYm9jb3JwLTEwMDhyKQsSCFBvaW50R1BTIhs0My41Njc3ODYwMDAwMDAwMDUsMS40Njc2NjkM",
+            "x": 43.567786000000005,
+            "y": 1.467669
+          },
+          "rotation": 90,
+          "free": true
+        },
+        {
+          "key": "ag9zfnJvYm9jb3JwLTEwMDhyCwsSBVBsYWNlGD4M",
+          "numeroDePlace": 62,
+          "point": {
+            "key": "ag9zfnJvYm9jb3JwLTEwMDhyMwsSCFBvaW50R1BTIiU0My41Njc4MDYwMDAwMDAwMDQsMS40Njc2ODg5OTk5OTk5OTk4DA",
+            "x": 43.567806000000004,
+            "y": 1.4676889999999998
+          },
+          "rotation": 90,
+          "free": true
+        },
+        {
+          "key": "ag9zfnJvYm9jb3JwLTEwMDhyCwsSBVBsYWNlGD8M",
+          "numeroDePlace": 63,
+          "point": {
+            "key": "ag9zfnJvYm9jb3JwLTEwMDhyKQsSCFBvaW50R1BTIhs0My41Njc4MjYwMDAwMDAwMDQsMS40Njc3MDkM",
+            "x": 43.567826000000004,
+            "y": 1.467709
+          },
+          "rotation": 90,
+          "free": true
+        },
+        {
+          "key": "ag9zfnJvYm9jb3JwLTEwMDhyCwsSBVBsYWNlGEAM",
+          "numeroDePlace": 64,
+          "point": {
+            "key": "ag9zfnJvYm9jb3JwLTEwMDhyKgsSCFBvaW50R1BTIhw0My41Njc4NDYsMS40Njc3Mjg5OTk5OTk5OTk4DA",
+            "x": 43.567846,
+            "y": 1.4677289999999998
+          },
+          "rotation": 90,
+          "free": true
+        },
+        {
+          "key": "ag9zfnJvYm9jb3JwLTEwMDhyCwsSBVBsYWNlGEEM",
+          "numeroDePlace": 65,
+          "point": {
+            "key": "ag9zfnJvYm9jb3JwLTEwMDhyIAsSCFBvaW50R1BTIhI0My41Njc4NjYsMS40Njc3NDkM",
+            "x": 43.567866,
+            "y": 1.467749
+          },
+          "rotation": 90,
+          "free": true
+        },
+        {
+          "key": "ag9zfnJvYm9jb3JwLTEwMDhyCwsSBVBsYWNlGEIM",
+          "numeroDePlace": 66,
+          "point": {
+            "key": "ag9zfnJvYm9jb3JwLTEwMDhyKgsSCFBvaW50R1BTIhw0My41Njc4ODYsMS40Njc3Njg5OTk5OTk5OTk5DA",
+            "x": 43.567886,
+            "y": 1.4677689999999999
+          },
+          "rotation": 90,
+          "free": true
+        },
+        {
+          "key": "ag9zfnJvYm9jb3JwLTEwMDhyCwsSBVBsYWNlGEMM",
+          "numeroDePlace": 67,
+          "point": {
+            "key": "ag9zfnJvYm9jb3JwLTEwMDhyKgsSCFBvaW50R1BTIhw0My41Njc5MDYsMS40Njc3ODg5OTk5OTk5OTk4DA",
+            "x": 43.567906,
+            "y": 1.4677889999999998
+          },
+          "rotation": 90,
+          "free": true
+        },
+        {
+          "key": "ag9zfnJvYm9jb3JwLTEwMDhyCwsSBVBsYWNlGEQM",
+          "numeroDePlace": 68,
+          "point": {
+            "key": "ag9zfnJvYm9jb3JwLTEwMDhyIAsSCFBvaW50R1BTIhI0My41Njc5MjYsMS40Njc4MDkM",
+            "x": 43.567926,
+            "y": 1.467809
+          },
+          "rotation": 90,
+          "free": true
+        },
+        {
+          "key": "ag9zfnJvYm9jb3JwLTEwMDhyCwsSBVBsYWNlGEUM",
+          "numeroDePlace": 69,
+          "point": {
+            "key": "ag9zfnJvYm9jb3JwLTEwMDhyKgsSCFBvaW50R1BTIhw0My41Njc5NDYsMS40Njc4Mjg5OTk5OTk5OTk4DA",
+            "x": 43.567946,
+            "y": 1.4678289999999998
+          },
+          "rotation": 90,
+          "free": true
+        },
+        {
+          "key": "ag9zfnJvYm9jb3JwLTEwMDhyCwsSBVBsYWNlGEYM",
+          "numeroDePlace": 70,
+          "point": {
+            "key": "ag9zfnJvYm9jb3JwLTEwMDhyIAsSCFBvaW50R1BTIhI0My41Njc5NjYsMS40Njc4NDkM",
+            "x": 43.567966,
+            "y": 1.467849
+          },
+          "rotation": 90,
+          "free": true
+        },
+        {
+          "key": "ag9zfnJvYm9jb3JwLTEwMDhyCwsSBVBsYWNlGEcM",
+          "numeroDePlace": 71,
+          "point": {
+            "key": "ag9zfnJvYm9jb3JwLTEwMDhyMwsSCFBvaW50R1BTIiU0My41Njc5ODYwMDAwMDAwMDUsMS40Njc4Njg5OTk5OTk5OTk5DA",
+            "x": 43.567986000000005,
+            "y": 1.4678689999999999
+          },
+          "rotation": 90,
+          "free": true
+        },
+        {
+          "key": "ag9zfnJvYm9jb3JwLTEwMDhyCwsSBVBsYWNlGEgM",
+          "numeroDePlace": 72,
+          "point": {
+            "key": "ag9zfnJvYm9jb3JwLTEwMDhyKQsSCFBvaW50R1BTIhs0My41NjgwMDYwMDAwMDAwMDQsMS40Njc4ODkM",
+            "x": 43.568006000000004,
+            "y": 1.467889
+          },
+          "rotation": 90,
+          "free": true
+        },
+        {
+          "key": "ag9zfnJvYm9jb3JwLTEwMDhyCwsSBVBsYWNlGEkM",
+          "numeroDePlace": 73,
+          "point": {
+            "key": "ag9zfnJvYm9jb3JwLTEwMDhyIAsSCFBvaW50R1BTIhI0My41NjgwMjYsMS40Njc5MDkM",
+            "x": 43.568026,
+            "y": 1.467909
+          },
+          "rotation": 90,
+          "free": true
+        },
+        {
+          "key": "ag9zfnJvYm9jb3JwLTEwMDhyCwsSBVBsYWNlGEoM",
+          "numeroDePlace": 74,
+          "point": {
+            "key": "ag9zfnJvYm9jb3JwLTEwMDhyKgsSCFBvaW50R1BTIhw0My41NjgwNDYsMS40Njc5Mjg5OTk5OTk5OTk4DA",
+            "x": 43.568046,
+            "y": 1.4679289999999998
+          },
+          "rotation": 90,
+          "free": true
+        },
+        {
+          "key": "ag9zfnJvYm9jb3JwLTEwMDhyCwsSBVBsYWNlGEsM",
+          "numeroDePlace": 75,
+          "point": {
+            "key": "ag9zfnJvYm9jb3JwLTEwMDhyIAsSCFBvaW50R1BTIhI0My41NjgwNjYsMS40Njc5NDkM",
+            "x": 43.568066,
+            "y": 1.467949
+          },
+          "rotation": 90,
+          "free": true
+        },
+        {
+          "key": "ag9zfnJvYm9jb3JwLTEwMDhyCwsSBVBsYWNlGEwM",
+          "numeroDePlace": 76,
+          "point": {
+            "key": "ag9zfnJvYm9jb3JwLTEwMDhyKgsSCFBvaW50R1BTIhw0My41NjgwODYsMS40Njc5Njg5OTk5OTk5OTk5DA",
+            "x": 43.568086,
+            "y": 1.4679689999999999
+          },
+          "rotation": 90,
+          "free": true
+        },
+        {
+          "key": "ag9zfnJvYm9jb3JwLTEwMDhyCwsSBVBsYWNlGE0M",
+          "numeroDePlace": 77,
+          "point": {
+            "key": "ag9zfnJvYm9jb3JwLTEwMDhyIAsSCFBvaW50R1BTIhI0My41NjgxMDYsMS40Njc5ODkM",
+            "x": 43.568106,
+            "y": 1.467989
+          },
+          "rotation": 90,
+          "free": true
+        },
+        {
+          "key": "ag9zfnJvYm9jb3JwLTEwMDhyCwsSBVBsYWNlGE4M",
+          "numeroDePlace": 78,
+          "point": {
+            "key": "ag9zfnJvYm9jb3JwLTEwMDhyIAsSCFBvaW50R1BTIhI0My41NjgxMjYsMS40NjgwMDkM",
+            "x": 43.568126,
+            "y": 1.468009
+          },
+          "rotation": 90,
+          "free": true
+        },
+        {
+          "key": "ag9zfnJvYm9jb3JwLTEwMDhyCwsSBVBsYWNlGE8M",
+          "numeroDePlace": 79,
+          "point": {
+            "key": "ag9zfnJvYm9jb3JwLTEwMDhyKgsSCFBvaW50R1BTIhw0My41NjgxNDYsMS40NjgwMjg5OTk5OTk5OTk4DA",
+            "x": 43.568146,
+            "y": 1.4680289999999998
+          },
+          "rotation": 90,
+          "free": true
+        },
+        {
+          "key": "ag9zfnJvYm9jb3JwLTEwMDhyCwsSBVBsYWNlGFAM",
+          "numeroDePlace": 80,
+          "point": {
+            "key": "ag9zfnJvYm9jb3JwLTEwMDhyKQsSCFBvaW50R1BTIhs0My41NjgxNjYwMDAwMDAwMDUsMS40NjgwNDkM",
+            "x": 43.568166000000005,
+            "y": 1.468049
+          },
+          "rotation": 90,
+          "free": true
+        },
+        {
+          "key": "ag9zfnJvYm9jb3JwLTEwMDhyCwsSBVBsYWNlGFEM",
+          "numeroDePlace": 81,
+          "point": {
+            "key": "ag9zfnJvYm9jb3JwLTEwMDhyMwsSCFBvaW50R1BTIiU0My41NjgxODYwMDAwMDAwMDQsMS40NjgwNjg5OTk5OTk5OTk4DA",
+            "x": 43.568186000000004,
+            "y": 1.4680689999999998
+          },
+          "rotation": 90,
+          "free": true
+        },
+        {
+          "key": "ag9zfnJvYm9jb3JwLTEwMDhyCwsSBVBsYWNlGFIM",
+          "numeroDePlace": 82,
+          "point": {
+            "key": "ag9zfnJvYm9jb3JwLTEwMDhyIAsSCFBvaW50R1BTIhI0My41NjgyMDYsMS40NjgwODkM",
+            "x": 43.568206,
+            "y": 1.468089
+          },
+          "rotation": 90,
+          "free": true
+        },
+        {
+          "key": "ag9zfnJvYm9jb3JwLTEwMDhyCwsSBVBsYWNlGFMM",
+          "numeroDePlace": 83,
+          "point": {
+            "key": "ag9zfnJvYm9jb3JwLTEwMDhyKgsSCFBvaW50R1BTIhw0My41NjgyMjYsMS40NjgxMDg5OTk5OTk5OTk5DA",
+            "x": 43.568226,
+            "y": 1.4681089999999999
+          },
+          "rotation": 90,
+          "free": true
+        },
+        {
+          "key": "ag9zfnJvYm9jb3JwLTEwMDhyCwsSBVBsYWNlGFQM",
+          "numeroDePlace": 84,
+          "point": {
+            "key": "ag9zfnJvYm9jb3JwLTEwMDhyKgsSCFBvaW50R1BTIhw0My41NjgyNDYsMS40NjgxMjg5OTk5OTk5OTk4DA",
+            "x": 43.568246,
+            "y": 1.4681289999999998
+          },
+          "rotation": 90,
+          "free": true
+        },
+        {
+          "key": "ag9zfnJvYm9jb3JwLTEwMDhyCwsSBVBsYWNlGFUM",
+          "numeroDePlace": 85,
+          "point": {
+            "key": "ag9zfnJvYm9jb3JwLTEwMDhyIAsSCFBvaW50R1BTIhI0My41NjgyNjYsMS40NjgxNDkM",
+            "x": 43.568266,
+            "y": 1.468149
+          },
+          "rotation": 90,
+          "free": true
+        },
+        {
+          "key": "ag9zfnJvYm9jb3JwLTEwMDhyCwsSBVBsYWNlGFYM",
+          "numeroDePlace": 86,
+          "point": {
+            "key": "ag9zfnJvYm9jb3JwLTEwMDhyKgsSCFBvaW50R1BTIhw0My41NjgyODYsMS40NjgxNjg5OTk5OTk5OTk4DA",
+            "x": 43.568286,
+            "y": 1.4681689999999998
+          },
+          "rotation": 90,
+          "free": true
+        },
+        {
+          "key": "ag9zfnJvYm9jb3JwLTEwMDhyCwsSBVBsYWNlGFcM",
+          "numeroDePlace": 87,
+          "point": {
+            "key": "ag9zfnJvYm9jb3JwLTEwMDhyIAsSCFBvaW50R1BTIhI0My41NjgzMDYsMS40NjgxODkM",
+            "x": 43.568306,
+            "y": 1.468189
+          },
+          "rotation": 90,
+          "free": true
+        },
+        {
+          "key": "ag9zfnJvYm9jb3JwLTEwMDhyCwsSBVBsYWNlGFgM",
+          "numeroDePlace": 88,
+          "point": {
+            "key": "ag9zfnJvYm9jb3JwLTEwMDhyKgsSCFBvaW50R1BTIhw0My41NjgzMjYsMS40NjgyMDg5OTk5OTk5OTk5DA",
+            "x": 43.568326,
+            "y": 1.4682089999999999
+          },
+          "rotation": 90,
+          "free": true
+        },
+        {
+          "key": "ag9zfnJvYm9jb3JwLTEwMDhyCwsSBVBsYWNlGFkM",
+          "numeroDePlace": 89,
+          "point": {
+            "key": "ag9zfnJvYm9jb3JwLTEwMDhyKgsSCFBvaW50R1BTIhw0My41NjgzNDYsMS40NjgyMjg5OTk5OTk5OTk4DA",
+            "x": 43.568346,
+            "y": 1.4682289999999998
+          },
+          "rotation": 90,
+          "free": true
+        },
+        {
+          "key": "ag9zfnJvYm9jb3JwLTEwMDhyCwsSBVBsYWNlGFoM",
+          "numeroDePlace": 90,
+          "point": {
+            "key": "ag9zfnJvYm9jb3JwLTEwMDhyKQsSCFBvaW50R1BTIhs0My41NjgzNjYwMDAwMDAwMDUsMS40NjgyNDkM",
+            "x": 43.568366000000005,
+            "y": 1.468249
+          },
+          "rotation": 90,
+          "free": true
+        },
+        {
+          "key": "ag9zfnJvYm9jb3JwLTEwMDhyCwsSBVBsYWNlGFsM",
+          "numeroDePlace": 91,
+          "point": {
+            "key": "ag9zfnJvYm9jb3JwLTEwMDhyMwsSCFBvaW50R1BTIiU0My41NjgzODYwMDAwMDAwMDQsMS40NjgyNjg5OTk5OTk5OTk4DA",
+            "x": 43.568386000000004,
+            "y": 1.4682689999999998
+          },
+          "rotation": 90,
+          "free": true
+        },
+        {
+          "key": "ag9zfnJvYm9jb3JwLTEwMDhyCwsSBVBsYWNlGFwM",
+          "numeroDePlace": 92,
+          "point": {
+            "key": "ag9zfnJvYm9jb3JwLTEwMDhyIAsSCFBvaW50R1BTIhI0My41Njg0MDYsMS40NjgyODkM",
+            "x": 43.568406,
+            "y": 1.468289
+          },
+          "rotation": 90,
+          "free": true
+        },
+        {
+          "key": "ag9zfnJvYm9jb3JwLTEwMDhyCwsSBVBsYWNlGF0M",
+          "numeroDePlace": 93,
+          "point": {
+            "key": "ag9zfnJvYm9jb3JwLTEwMDhyKgsSCFBvaW50R1BTIhw0My41Njg0MjYsMS40NjgzMDg5OTk5OTk5OTk5DA",
+            "x": 43.568426,
+            "y": 1.4683089999999999
+          },
+          "rotation": 90,
+          "free": true
+        },
+        {
+          "key": "ag9zfnJvYm9jb3JwLTEwMDhyCwsSBVBsYWNlGF4M",
+          "numeroDePlace": 94,
+          "point": {
+            "key": "ag9zfnJvYm9jb3JwLTEwMDhyIAsSCFBvaW50R1BTIhI0My41Njg0NDYsMS40NjgzMjkM",
+            "x": 43.568446,
+            "y": 1.468329
+          },
+          "rotation": 90,
+          "free": true
+        },
+        {
+          "key": "ag9zfnJvYm9jb3JwLTEwMDhyCwsSBVBsYWNlGF8M",
+          "numeroDePlace": 95,
+          "point": {
+            "key": "ag9zfnJvYm9jb3JwLTEwMDhyIAsSCFBvaW50R1BTIhI0My41Njg0NjYsMS40NjgzNDkM",
+            "x": 43.568466,
+            "y": 1.468349
+          },
+          "rotation": 90,
+          "free": true
+        },
+        {
+          "key": "ag9zfnJvYm9jb3JwLTEwMDhyCwsSBVBsYWNlGGAM",
+          "numeroDePlace": 96,
+          "point": {
+            "key": "ag9zfnJvYm9jb3JwLTEwMDhyKgsSCFBvaW50R1BTIhw0My41Njg0ODYsMS40NjgzNjg5OTk5OTk5OTk4DA",
+            "x": 43.568486,
+            "y": 1.4683689999999998
+          },
+          "rotation": 90,
+          "free": true
+        },
+        {
+          "key": "ag9zfnJvYm9jb3JwLTEwMDhyCwsSBVBsYWNlGGEM",
+          "numeroDePlace": 97,
+          "point": {
+            "key": "ag9zfnJvYm9jb3JwLTEwMDhyIAsSCFBvaW50R1BTIhI0My41Njg1MDYsMS40NjgzODkM",
+            "x": 43.568506,
+            "y": 1.468389
+          },
+          "rotation": 90,
+          "free": true
+        },
+        {
+          "key": "ag9zfnJvYm9jb3JwLTEwMDhyCwsSBVBsYWNlGGIM",
+          "numeroDePlace": 98,
+          "point": {
+            "key": "ag9zfnJvYm9jb3JwLTEwMDhyKgsSCFBvaW50R1BTIhw0My41Njg1MjYsMS40Njg0MDg5OTk5OTk5OTk5DA",
+            "x": 43.568526,
+            "y": 1.4684089999999999
+          },
+          "rotation": 90,
+          "free": true
+        },
+        {
+          "key": "ag9zfnJvYm9jb3JwLTEwMDhyCwsSBVBsYWNlGGMM",
+          "numeroDePlace": 99,
+          "point": {
+            "key": "ag9zfnJvYm9jb3JwLTEwMDhyKQsSCFBvaW50R1BTIhs0My41Njg1NDYwMDAwMDAwMDUsMS40Njg0MjkM",
+            "x": 43.568546000000005,
+            "y": 1.468429
+          },
+          "rotation": 90,
+          "free": true
+        }
+      ],
+      "chemins": [
+        {
+          "key": "ag9zfnJvYm9jb3JwLTEwMDhyZQsSB1ZlY3RldXIiWGNvbS5yb2JvY29ycDIubW9kZWwucGFya2luZy5Qb2ludEdQU0AxNjc2YmViLGNvbS5yb2JvY29ycDIubW9kZWwucGFya2luZy5Qb2ludEdQU0BkZTQzNDIM",
+          "pointDebut": {
+            "key": "ag9zfnJvYm9jb3JwLTEwMDhyIAsSCFBvaW50R1BTIhI0My41NjY1NjYsMS40NjY0NDkM",
+            "x": 43.566566,
+            "y": 1.466449
+          },
+          "pointFin": {
+            "key": "ag9zfnJvYm9jb3JwLTEwMDhyKQsSCFBvaW50R1BTIhs0My41Njg1NjYwMDAwMDAwMDQsMS40Njg0NDkM",
+            "x": 43.568566000000004,
+            "y": 1.468449
+          }
+        }
+      ],
+      "cameras": [
+        {
+          "key": "ag9zfnJvYm9jb3JwLTEwMDhyMAsSBkNhbWVyYSIkZDIzOWUxNWQtYTMwNy00ODgyLWEyYjEtNmExYzRlZjU5ZTk3DA",
+          "point": {
+            "key": "ag9zfnJvYm9jb3JwLTEwMDhyIAsSCFBvaW50R1BTIhI0My41NjY1NjYsMS40NjY0NDkM",
+            "x": 43.566566,
+            "y": 1.466449
+          },
+          "hauteur": 3,
+          "rotationInDegrees": 0,
+          "focal": 120,
+		  "adresse": "D:\\Surveillance.mp4"
+        }
+      ]
+    }
+  ],
+  "nom": "Parking CNAM",
+  "adresse": "Université Paul Sabatier",
+  "pointGPSLat": 43.566791,
+  "pointGPSLon": 1.466735,
+  "jdoDetachedState": null
+}

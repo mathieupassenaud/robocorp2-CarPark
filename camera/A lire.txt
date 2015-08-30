@@ -1,0 +1,9 @@
+La dll qui correspond à l'analyse de l'image est compilée en 32 bits,
+il faut donc un java 32 bits pour executer le programme.
+N'oubliez pas d'adapter le chemin vers java.
+Les paramêtres de la commande sont :
+boolean debug=true ou false
+
+Si debug=true il faut aussi renseigner:
+String chemin vers le fichier Json de test
+String chemin vers le répertoire de sortie des images
