@@ -78,7 +78,11 @@ public class ParkingDAO {
 		List<Parking> parkings = Datastore.query(ParkingMeta.get()).sort(ParkingMeta.get().pointGPSLat.asc).sort(ParkingMeta.get().pointGPSLon.asc).asList();
 		
 		List<Parking> nearestParkings = new ArrayList<Parking>();
-		for(int i = 0 ; i < 5 ; i ++){
+		int parkingsToFind = 5;
+		if(parkings.size() < parkingsToFind){
+			parkingsToFind = parkings.size();
+		}
+		for(int i = 0 ; i < parkingsToFind ; i ++){
 			
 		Parking nearestParking = new Parking(null, "test", "test", new PointGPS(Double.MAX_VALUE, Double.MAX_VALUE));
 		for(Parking parking : parkings){
@@ -86,7 +90,7 @@ public class ParkingDAO {
 					Math.abs(parking.getPointGPSLon()-gps.getY()) < Math.abs(nearestParking.getPointGPSLon()-gps.getY())){
 				nearestParking = parking;
 				nearestParkings.add(parking);
-				parkings.remove(parking);
+				//parkings.remove(parking);
 			}
 		}
 		}

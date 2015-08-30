@@ -28,13 +28,16 @@ public class Camera implements Serializable{
 	private double hauteur;
 	private int rotationInDegrees;
 	private int focal;
-	public Camera(PointGPS point, double hauteur, int rotationInDegrees, int focal) {
+	private String adresse;
+	
+	public Camera(PointGPS point, double hauteur, int rotationInDegrees, int focal, String adresse) {
 		super();
 		this.key = Datastore.createKey(Camera.class, UUID.randomUUID().toString());
 		this.point = point;
 		this.hauteur = hauteur;
 		this.rotationInDegrees = rotationInDegrees;
 		this.focal = focal;
+		this.adresse = adresse;
 	}
 	public Camera() {
 		super();
@@ -99,6 +102,18 @@ public class Camera implements Serializable{
 	 */
 	public void setFocal(int focal) {
 		this.focal = focal;
+	}
+	/**
+	 * @return the adresse
+	 */
+	public String getAdresse() {
+		return adresse;
+	}
+	/**
+	 * @param adresse the adresse to set
+	 */
+	public void setAdresse(String adresse) {
+		this.adresse = adresse;
 	}
 	
 	

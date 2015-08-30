@@ -49,7 +49,7 @@ public class StructureAPI {
 		chemins.add(new Vecteur(new PointGPS(2.0, 4.0), new PointGPS(4.0, 7.0)));
 		chemins.add(new Vecteur(new PointGPS(4.0, 7.0), new PointGPS(9.0, 8.0)));
 		
-		cameras.add(new Camera(new PointGPS(1.0,1.0), 4, 90, 120));
+		cameras.add(new Camera(new PointGPS(1.0,1.0), 4, 90, 120, "adresse de la caméra"));
 		etages.add(new Etage(places, chemins, cameras));
 		
 		
@@ -84,7 +84,7 @@ public class StructureAPI {
 		chemins.add(new Vecteur(new PointGPS(2.0, 4.0), new PointGPS(4.0, 7.0)));
 		chemins.add(new Vecteur(new PointGPS(4.0, 7.0), new PointGPS(9.0, 8.0)));
 		
-		cameras.add(new Camera(new PointGPS(1.0,1.0), 4, 90, 120));
+		cameras.add(new Camera(new PointGPS(1.0,1.0), 4, 90, 120, "adresse de la caméra"));
 		return gson.toJson(new Etage(places, chemins, cameras));
 	}
 	
@@ -105,7 +105,7 @@ public class StructureAPI {
 	@ApiAuthor("Mathieu Passenaud")
 	@ApiVersion("0.1")
 	public String getDemoCamera(){
-		return gson.toJson(new Camera(new PointGPS(1.0,1.0), 4, 90, 120));
+		return gson.toJson(new Camera(new PointGPS(1.0,1.0), 4, 90, 120, "adresse de la caméra"));
 	}
 	
 	@GET
@@ -124,13 +124,38 @@ public class StructureAPI {
 			places.add(new Place(new PointGPS( 43.566566+(i*0.00002), 1.466449+(i*0.00002)), i, 90, PlaceStatus.FREE));
 		}
 		
-		cameras.add(new Camera(new PointGPS(43.566566, 1.466449), 3, 0, 120));
+		cameras.add(new Camera(new PointGPS(43.566566, 1.466449), 3, 0, 120, "adresse de la caméra"));
 		chemins.add(new Vecteur(new PointGPS(43.566566, 1.466449), new PointGPS( 43.566566+(100*0.00002), 1.466449+(100*0.00002))));
 		
 		etages.add(new Etage(places, chemins, cameras));
 		
 		Parking parkingCNAM = new Parking(etages, "Parking CNAM", "Université Paul Sabatier", new PointGPS(43.566791, 1.466735));
 		ParkingDAO.getInstance().saveParking(parkingCNAM);
+	}
+	
+	@GET
+	@Path("createRAM")
+	@Produces("application/JSON")
+	@ApiDoc("Crée le parking métro ramonville")
+	@ApiAuthor("Mathieu Passenaud")
+	@ApiVersion("0.1")
+	public void createRAMParking(){
+		ArrayList<Etage> etages = new ArrayList<Etage>();
+		ArrayList<Place> places = new ArrayList<Place>();
+		ArrayList<Camera> cameras = new ArrayList<Camera>();
+		ArrayList<Vecteur> chemins = new ArrayList<Vecteur>();
+		
+		for(int i=1; i<200; i++){
+			places.add(new Place(new PointGPS( 43.555482+(i*0.00002), 1.476955+(i*0.00002)), i, 90, PlaceStatus.FREE));
+		}
+		
+		cameras.add(new Camera(new PointGPS(43.555482, 1.476955), 3, 0, 120, "adresse de la caméra"));
+		chemins.add(new Vecteur(new PointGPS(43.555482, 1.476955), new PointGPS( 43.555482+(100*0.00002), 1.476955+(100*0.00002))));
+		
+		etages.add(new Etage(places, chemins, cameras));
+		
+		Parking parkingRAM = new Parking(etages, "Parking Ramonville", "Terminus métro", new PointGPS(43.555482, 1.476955));
+		ParkingDAO.getInstance().saveParking(parkingRAM);
 	}
 	
 }
