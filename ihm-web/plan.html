@@ -1,0 +1,526 @@
+<!-- Content Header (Page header) -->
+<section class="content-header">
+    <h1>
+        Saisie du plan
+        <small>Interface de saisie du plan du parquing.</small>
+    </h1>
+    <ol class="breadcrumb">
+        <li><a href="#"><i class="fa fa-dashboard"></i> Menu principal</a></li>
+        <li><a href="#">Paramétrage</a></li>
+        <li class="active">Plan</li>
+    </ol>
+</section>
+
+<!-- Main content -->
+<section class="content plan">
+
+    <!-- Default box -->
+    <div class="box plan">
+        <div class="box-header with-border">
+            <h3 class="box-title">Title</h3>
+            <div class="box-tools pull-right">
+                <div class="btn-group">
+                    <button id="btnSave" class="btn-flat" data-widget="collapse" data-toggle="tooltip" title="Sauvegarder"><i class="fa fa-save"></i></button>
+                    <button id="btnMotorcycle" class="btn-flat" data-widget="collapse" data-toggle="tooltip" title="Place 2 roue"><i class="fa fa-motorcycle"></i></button>
+                    <button id="btnWheelchair" class="btn-flat" data-widget="collapse" data-toggle="tooltip" title="Place handicapé"><i class="fa fa-wheelchair"></i></button>
+                    <button id="btnAuto" class="btn-flat" data-widget="collapse" data-toggle="tooltip" title="Place"><i class="fa fa-automobile"></i></button>
+                    <button id="btnRoad" class="btn-flat" data-widget="collapse" data-toggle="tooltip" title="Allées"><i class="fa fa-road"></i></button>
+                    <button id="btnCamera" class="btn-flat" data-widget="collapse" data-toggle="tooltip" title="Camera"><i class="fa fa-camera"></i></button>
+                    <button id="btnEdit" class="btn-flat" data-widget="collapse" data-toggle="tooltip" title="Mode édition"><i class="fa fa-magic"></i></button>
+                    <button id="btnArrows" class="btn-flat" data-widget="collapse" data-toggle="tooltip" title="Déplacement"><i class="fa fa-arrows"></i></button>
+                </div>
+            </div>
+        </div>
+        <div class="box-body plan container-fluid">
+            <div class="row">
+                <div class="col-md-2 debug-color">
+                    Drop file here
+                </div>
+                <div id="divCanvasWrapper" class="col-md-10">
+                    <canvas id="canvas" width="800" height="800">
+                    </canvas>    
+                </div>
+            </div>
+        </div><!-- /.box-body -->
+        <div class="box-footer">
+
+        </div><!-- /.box-footer-->
+    </div><!-- /.box -->
+
+    <script type="text/javascript">
+        (function () {
+            var data = [];
+            var places = [];
+            var cameras = [];
+            var stars = [];
+            var tool = new paper.Tool();
+            var pathtool = new paper.Tool();
+            var toolDragAndZoon = new paper.Tool();
+            var roads = [];
+
+            function GetCanvas() {
+                var canvas = document.getElementById('canvas');
+                return canvas;
+            }
+
+            function canvasGetContext() {
+                var canvas = document.getElementById('canvas');
+                var ctx = canvas.getContext('2d');
+                return ctx;
+            }
+
+            var canvas = GetCanvas();
+            var dnz = new DragAndZoom(canvas, drawCanvas);
+            dnz.populateTool(toolDragAndZoon);
+
+
+            function dragOverHandler(evt) {
+                evt.stopPropagation();
+                evt.preventDefault();
+                evt.dataTransfer.dropEffect = 'copy';
+            }
+
+            function fileDropHandler(evt) {
+                evt.stopPropagation();
+                evt.preventDefault();
+                var files = evt.dataTransfer.files;
+                var count = 0;
+                for (var i = 0; files[i]; ++i) {
+                    var f = files[i];
+                    if (!f.type.match('image.*')) {
+                        continue;
+                    }
+                    ++count;
+                    var reader = new FileReader();
+                    reader.onload = (function (file) {
+                        return function (e) {
+                            var img = new Image;
+                            img.onload = function () {
+                                var raster = new paper.Raster(img.id);
+                                data.push(raster);
+                                --count;
+                                if (count === 0) {
+                                    drawCanvas();
+                                }
+                            };
+                            img.src = e.target.result;
+                            img.id = "img" + i;
+                            $("body").append(img);
+                        };
+                    })(f);
+                    reader.readAsDataURL(f);
+                }
+            }
+
+            function drawCanvas() {
+                if (paper.view !== null) {
+                    paper.view.update(true);
+                }
+            }
+
+            function addParkingPlace(type) {
+                var path = null;
+
+                if (places.length === 0) {
+                    path = new paper.Path();
+                } else {
+                    path = places[places.length - 1].clone();
+                    path.position.x += 10;
+                    path.position.y += 10;
+                }
+
+                if (type === 'handi') {
+                    path.fillColor = 'cyan';
+                } else if (type === 'cycle') {
+                    path.fillColor = 'yellow'
+                } else {
+                    path.fillColor = 'grey';
+                }
+                path.strokeColor = 'black';
+
+                path.fillColor.alpha = 0.3;
+
+                if (places.length === 0) {
+                    path.add(new paper.Point(30, 75));
+                    path.add(new paper.Point(30, 25));
+                    path.add(new paper.Point(80, 25));
+                    path.add(new paper.Point(80, 75));
+                    path.closed = true;
+                    path.strokeWidth = 6;
+                }
+                places.push(path);
+                drawCanvas();
+            }
+
+
+            function addCamera() {
+                var path = null;
+
+                if (cameras.length === 0) {
+                    path = new paper.Path();
+                } else {
+                    path = cameras[cameras.length - 1].clone();
+                    path.position.x += 10;
+                    path.position.y += 10;
+                }
+                path.strokeColor = 'red';
+                if (places.length === 0) {
+                    path.add(new paper.Point(60, 75));
+                    path.add(new paper.Point(60, 25));
+                    path.add(new paper.Point(30, 65));
+                    path.add(new paper.Point(60, 25));
+                    path.add(new paper.Point(90, 65));
+                    path.closed = false;
+                    path.strokeWidth = 10;
+                }
+                cameras.push(path);
+                drawCanvas();
+            }
+            /*
+             function initHandle() {
+             //ajout poignés de rotation
+             var hpos = new paper.Point(50, 50);
+             var hpos2 = hpos.clone();
+             hpos2.x += 70;
+             var path = new paper.Path();
+             path.add(hpos);
+             path.add(hpos2);
+             path.strokeColor = 'black';
+             path.strokeWidth = 1;
+             path.dashArray = [10, 12];
+             var handle2 = new paper.Path.Circle({
+             center: hpos2,
+             radius: 5,
+             fillColor: 'white',
+             strokeColor: 'cyan',
+             strokeWidth: 1
+             });
+             
+             handle = new paper.Group(path, handle2);
+             handle.pivot = hpos;
+             
+             handle2.onMouseDrag = function (event) {
+             if (handle.children.length === 3) {
+             console.log("Rotating");
+             path.firstSegment.point = handle.lastChild.position;
+             path.lastSegment.point = event.point.clone();
+             handle.lastChild.rotate(event.point.subtract(hpos).angle - (handle2.position.subtract(hpos)).angle);
+             }
+             };
+             }
+             
+             
+             function showHandle(path) {
+             var origin = path.position;
+             
+             handle.pivot = origin.clone();
+             handle.firstChild.position = origin.clone();
+             console.log(handle.firstChild.segements);
+             handle.children[0].segments[0].point = origin.clone();
+             handle.children[0].segments[1].point = new Point(origin.x + 70, origin.y);
+             handle.children[1].position = new Point(origin.x + 70, origin.y);
+             handle.insertBelow(path);
+             }
+             
+             function hideHandle(path) {
+             console.log(handle.children.length);
+             handle.removeChildren(2);
+             }*/
+
+            function paperInit() {
+                paper.install(window);
+                paper.setup(GetCanvas());
+                paper.settings.handleSize = 6;
+
+                paper.view.draw();
+            }
+            paperInit();
+            //initHandle();
+
+            function initSegmentEditor() {
+                var segment, stroke, path;
+                var movePath = false;
+
+                tool.onMouseDown = function (event) {
+                    stroke = segment = path = null;
+                    var hitResult = paper.project.hitTest(event.point, paper.project.hitOptions);
+                    console.log(hitResult);
+                    if (!hitResult || hitResult.type === 'pixel')
+                        return;
+
+                    path = hitResult.item;
+                    console.log(hitResult.type);
+                    if (hitResult.type === 'segment') {
+                        segment = hitResult.segment;
+                    }
+
+                    if (hitResult.type === 'stroke') {
+                        console.log(hitResult.item);
+                        stroke = hitResult.item;
+                    }
+
+                    movePath = hitResult.type === 'fill';
+                    if (movePath)
+                        paper.project.activeLayer.addChild(hitResult.item);
+                }
+
+                tool.onMouseMove = function (event) {
+                    paper.project.activeLayer.selected = false;
+                    //hideHandle(path);
+
+
+                    if (event.item) {
+                        console.log("ShowHandels");
+                        event.item.selected = true;
+                        path = event.item;
+                        //showHandle(path);
+
+                        drawCanvas();
+                    }
+                }
+
+                tool.onMouseDrag = function (event) {
+                    if (segment && path.segments.length === 4) {
+                        var i = path.segments.indexOf(segment);
+                        var scount = path.segments.length;
+                        var next = (scount + i + 1) % scount;
+                        var prev = (scount + i - 1) % scount;
+                        var opposit = (scount + i + 2) % scount;
+                        var sorigin = segment;
+                        var snext = path.segments[next];
+                        var sprev = path.segments[prev];
+                        var sopposit = path.segments[opposit];
+                        sorigin.point.x += event.delta.x;
+                        sorigin.point.y += event.delta.y;
+
+                        var project = function (pilot, tomove, fixed) {
+                            //projection de a sur la droite bc
+                            var vector = {x: tomove.x - fixed.x, y: tomove.y - fixed.y};
+                            /*
+                             var ratio = diff.y / diff.x;
+                             var hyp = Math.pow(diff.x, 2);
+                             hyp += Math.pow(diff.y, 2);
+                             hyp = Math.sqrt(hyp);
+                             */
+                            var up = (pilot.x - fixed.x) * vector.x + (pilot.y - fixed.y) * vector.y
+                            var down = Math.sqrt(Math.pow(vector.x, 2) + Math.pow(vector.y, 2));
+                            var bh = up / down;
+
+                            var newx = fixed.x + (bh / down) * vector.x;
+                            var newy = fixed.y + (bh / down) * vector.y;
+
+                            tomove.x = newx;
+                            tomove.y = newy;
+
+
+                            //return new paper.Point(newx, newy);
+                        }
+
+                        project(sorigin.point, snext.point, sopposit.point);
+                        project(sorigin.point, sprev.point, sopposit.point);
+                        /*
+                         if (!(i % 2)) {
+                         snext.point.x += event.delta.x;
+                         sprev.point.y += event.delta.y;
+                         } else {
+                         sprev.point.x += event.delta.x;
+                         snext.point.y += event.delta.y;
+                         }*/
+
+                    } else if (stroke) {
+                        stroke.rotate(event.delta.x);
+                    } else if (path) {
+                        path.position.x += event.delta.x;
+                        path.position.y += event.delta.y;
+                    }
+                }
+                //tool.activate()
+            }
+            initSegmentEditor();
+
+            pathtool.onMouseDown = function (event) {
+                currentroad.add(event.point);
+            }
+
+            function showCenters() {
+                while (stars.length) {
+                    var s = stars.pop();
+                    s.remove();
+                }
+                places.forEach(function (p) {
+                    var center = p.position;
+                    var points = 4;
+                    var radius1 = 2;
+                    var radius2 = 7;
+                    var path = new Path.Star(center, points, radius1, radius2);
+                    path.fillColor = 'yellow';
+                    path.strokeColor = 'black';
+                    path.strokeWidth = 1;
+                    stars.push(path);
+                });
+
+            }
+
+            function setSegmentEditorOn() {
+                //removeListerners();
+                tool.activate();
+            }
+
+            function initMouseDrag() {
+                toolDragAndZoon.activate();
+            }
+            initMouseDrag();
+
+            $('#btnMotorcycle').click(function () {
+                //toolDragAndZoon.remove();
+                setSegmentEditorOn();
+                addParkingPlace('cycle');
+            });
+
+            $('#btnWheelchair').click(function () {
+                //toolDragAndZoon.remove();
+                setSegmentEditorOn();
+                addParkingPlace('handi');
+            });
+
+            $("#btnCamera").click(function () {
+                //toolDragAndZoon.remove();
+                setSegmentEditorOn();
+                addCamera();
+            });
+
+            var currentroad;
+            $("#btnRoad").click(function () {
+                //toolDragAndZoon.remove();
+                //setSegmentEditorOn();
+                //addParkingPlace();
+                // Create a new path once, when the script is executed:
+                currentroad = new paper.Path();
+                currentroad.strokeColor = 'green';
+                currentroad.strokeWidth = 5;
+                roads.push(currentroad);
+                pathtool.activate();
+            });
+
+
+
+            $('#btnEdit').click(function () {
+                setSegmentEditorOn();
+            });
+
+
+
+            $("#btnArrows").click(function () {
+                //tool.remove();
+                toolDragAndZoon.activate();
+                showCenters();
+            });
+
+            $("#btnAuto").click(function () {
+                //toolDragAndZoon.remove();
+                setSegmentEditorOn();
+                addParkingPlace();
+            });
+
+            function buildPlaces(placelist) {
+                var computedplacelist = [];
+
+                placelist.forEach(function (place, index, array) {
+                    computedplacelist.push({
+                        "numeroDePlace": index,
+                        "point": {
+                            "x": place.position.x,
+                            "y": place.position.y
+                        },
+                        "rotation": place.rotation,
+                        "type": null
+                    });
+                });
+                return computedplacelist;
+            }
+
+            function buildPaths(pathlist) {
+                var computedpathlist = [];
+
+                pathlist.forEach(function (path, pindex, array) {
+                    path.segments.forEach(function (segment, sindex, segments) {
+                        if (sindex < segments.length - 1)
+                            computedpathlist.push({
+                                "pointDebut": {
+                                    "x": segment.point.x,
+                                    "y": segment.point.y
+                                },
+                                "pointFin": {
+                                    "x": segment.next.point.x,
+                                    "y": segment.next.point.y
+                                }
+                            });
+                    });
+                });
+                return computedpathlist;
+            }
+
+            function buildCameras(cameralist) {
+                var computedcameralist = [];
+
+                cameralist.forEach(function (camera, cindex, array) {
+                    computedcameralist.push({
+                        "point": {
+                            "x": camera.position.x,
+                            "y": camera.position.y
+                        },
+                        "hauteur": 4.0,
+                        "rotationInDegrees": camera.rotation,
+                        "focal": 120
+
+                    });
+                });
+                return computedcameralist;
+            }
+
+            $("#btnSave").click(function () {
+                $.ajax({
+                    url: "/parking/create/",
+                    type: "put",
+                    dataType: "json",
+                    data: {
+                        "etages": [
+                            {
+                                "places": buildPlaces(places),
+                                "chemins": buildPaths(roads),
+                                "cameras": buildCameras(cameras)
+                            }
+                        ],
+                        "nom": "Parking de démo",
+                        "adresse": "Adresse - 31000 Toulouse",
+                        "pointGPSLat": 43.6,
+                        "pointGPSLon": 1.433333,
+                        "jdoDetachedState": null
+                    }
+                });
+                console.log();
+            });
+
+            initMouseDrag();
+
+            $(window).resize(function () {
+                var ctx = canvasGetContext();
+                ctx.canvas.width = $("#divCanvasWrapper").width();
+                ctx.canvas.height = $(window).height() - 200;
+                console.log("resized : " + ctx.canvas.width + " " + ctx.canvas.height);
+                paper.view.viewSize = new Size(ctx.canvas.width, ctx.canvas.height);
+
+                drawCanvas();
+            });
+            $(window).resize();
+            if (window.File && window.FileReader && window.FileList && window.Blob) {
+                var dropZone = document;
+                dropZone.addEventListener('dragover', dragOverHandler, false);
+                dropZone.addEventListener('drop', fileDropHandler, false);
+            } else {
+                $('#drop-zone').html("Gestion des fichiers non supportée");
+            }
+        }
+        )();
+    </script>
+</section><!-- /.content -->

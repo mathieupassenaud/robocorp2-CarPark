@@ -1,0 +1,64 @@
+{
+  "etages": [
+    {
+      "places": [
+        {
+          "numeroDePlace": 1,
+          "point": {
+            "x": place.position.x,
+            "y": place.position.y
+          },
+          "rotation": rotation,
+          "type": null
+        },
+        {
+          "numeroDePlace": 2,
+          "point": {
+            "x": 2.0,
+            "y": 3.0
+          },
+          "rotation": 90,
+          "type": null
+        }
+      ],
+      "chemins": [
+        {
+          "pointDebut": {
+            "x": 2.0,
+            "y": 4.0
+          },
+          "pointFin": {
+            "x": 4.0,
+            "y": 7.0
+          }
+        },
+        {
+          "pointDebut": {
+            "x": 4.0,
+            "y": 7.0
+          },
+          "pointFin": {
+            "x": 9.0,
+            "y": 8.0
+          }
+        }
+      ],
+      "cameras": [
+        {
+          "point": {
+            "x": 1.0,
+            "y": 1.0
+          },
+          "hauteur": 4.0,
+          "rotationInDegrees": 90,
+          "focal": 120
+        }
+      ]
+    }
+  ],
+  "nom": "Parking de démo",
+  "adresse": "Adresse - 31000 Toulouse",
+  "pointGPSLat": 43.6,
+  "pointGPSLon": 1.433333,
+  "jdoDetachedState": null
+}
