@@ -1,12 +1,12 @@
-package com.robocorp2.core;
+package com.robocorp2.core.dijkstra;
 
-public class Edge  {
+public class Arc  {
 	  private final String id; 
-	  private final Vertex source;
-	  private final Vertex destination;
+	  private final Sommet source;
+	  private final Sommet destination;
 	  private final double weight; 
 	  
-	  public Edge(String id, Vertex source, Vertex destination, double weight) {
+	  public Arc(String id, Sommet source, Sommet destination, double weight) {
 	    this.id = id;
 	    this.source = source;
 	    this.destination = destination;
@@ -16,11 +16,11 @@ public class Edge  {
 	  public String getId() {
 	    return id;
 	  }
-	  public Vertex getDestination() {
+	  public Sommet getDestination() {
 	    return destination;
 	  }
 
-	  public Vertex getSource() {
+	  public Sommet getSource() {
 	    return source;
 	  }
 	  public double getWeight() {

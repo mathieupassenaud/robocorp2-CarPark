@@ -128,7 +128,7 @@
     "unimplemented" : false
   }, {
     "name" : "getNumberFreePlaces",
-    "path" : "getFreePlace/{idParking}",
+    "path" : "getNumberOfFreePlaces/{idParking}",
     "doc" : "Donne le nombre de places libres dans un parking",
     "author" : "Mathieu Passenaud",
     "version" : "0.1",

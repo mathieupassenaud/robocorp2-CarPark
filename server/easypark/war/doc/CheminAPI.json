@@ -8,7 +8,7 @@
   "consumeList" : [ ],
   "methodList" : [ {
     "name" : "getCheminToPlace",
-    "path" : "getRoute/{idPlace}",
+    "path" : "getRoute/{idParking}/{idPlace}",
     "doc" : "Donne le chemin jusqu'à une place",
     "author" : "Mathieu Passenaud",
     "version" : "0.1",
@@ -16,13 +16,18 @@
     "consumeList" : [ ],
     "type" : "javax.ws.rs.GET",
     "inputList" : [ {
+      "name" : "idParking",
+      "context" : "javax.ws.rs.PathParam",
+      "type" : "java.lang.String",
+      "defaultValue" : ""
+    }, {
       "name" : "idPlace",
       "context" : "javax.ws.rs.PathParam",
       "type" : "int",
       "defaultValue" : ""
     } ],
     "output" : {
-      "name" : "[Lcom.robocorp2.model.parking.Vecteur;"
+      "name" : "[Lcom.robocorp2.model.parking.PointGPS;"
     },
     "subResource" : false,
     "deprecated" : false,

@@ -91,13 +91,13 @@ public class ParkingAPI {
 	}
 	
 	@GET
-	@Path("getFreePlace/{idParking}")
+	@Path("getNumberOfFreePlaces/{idParking}")
 	@Consumes("Application/JSON")
 	@Produces("Application/JSON")
 	@ApiDoc("Donne le nombre de places libres dans un parking")
 	@ApiAuthor("Mathieu Passenaud")
 	@ApiVersion("0.1")
-	public int getNumberFreePlaces(@PathParam("idParking") String keyParking){
+	public String getNumberFreePlaces(@PathParam("idParking") String keyParking){
 		int nbFreePlaces = 0;
 		Parking parking = ParkingDAO.getInstance().getParkingByKey(Datastore.stringToKey(keyParking));
 		for(Etage etage : parking.getEtages()){
@@ -107,6 +107,6 @@ public class ParkingAPI {
 				}
 			}
 		}
-		return nbFreePlaces;
+		return nbFreePlaces+"";
 	}
 }

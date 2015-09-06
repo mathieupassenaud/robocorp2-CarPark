@@ -1,13 +1,13 @@
-package com.robocorp2.core;
+package com.robocorp2.core.dijkstra;
 
 import com.robocorp2.model.parking.PointGPS;
 
-public class Vertex {
+public class Sommet {
 		  final private String id;
 		  final private PointGPS pointGPS;
 		  
 		  
-		  public Vertex(String id, PointGPS pointGPS) {
+		  public Sommet(String id, PointGPS pointGPS) {
 		    this.id = id;
 		    this.pointGPS = pointGPS;
 		  }
@@ -35,7 +35,7 @@ public class Vertex {
 		      return false;
 		    if (getClass() != obj.getClass())
 		      return false;
-		    Vertex other = (Vertex) obj;
+		    Sommet other = (Sommet) obj;
 		    if (id == null) {
 		      if (other.id != null)
 		        return false;

@@ -12,10 +12,10 @@ import org.slim3.datastore.Datastore;
 
 import com.google.appengine.api.datastore.Key;
 import com.robocorp2.DAO.ParkingDAO;
-import com.robocorp2.core.Dijkstra;
-import com.robocorp2.core.Edge;
-import com.robocorp2.core.Graphe;
-import com.robocorp2.core.Vertex;
+import com.robocorp2.core.dijkstra.Dijkstra;
+import com.robocorp2.core.dijkstra.Arc;
+import com.robocorp2.core.dijkstra.Graphe;
+import com.robocorp2.core.dijkstra.Sommet;
 import com.robocorp2.model.parking.Etage;
 import com.robocorp2.model.parking.Parking;
 import com.robocorp2.model.parking.Place;
@@ -61,8 +61,8 @@ public class CheminAPI {
 		// 1 on calcule le graphe de l'étage
 
 
-		List<Vertex> nodes = new ArrayList<Vertex>();
-		List<Edge> edges = new ArrayList<Edge>();
+		List<Sommet> nodes = new ArrayList<Sommet>();
+		List<Arc> edges = new ArrayList<Arc>();
 
 
 		for(Vecteur vecteur : etageToGo.getChemins()){
@@ -71,7 +71,7 @@ public class CheminAPI {
 
 			boolean addDebut = true;
 			boolean addFin = true;
-			for(Vertex node : nodes){
+			for(Sommet node : nodes){
 				if(node.getPointGPS().equals(debut)){
 					addDebut = false;
 				}
@@ -80,19 +80,19 @@ public class CheminAPI {
 				}
 			}
 			if(addDebut){
-				nodes.add(new Vertex(Datastore.keyToString(vecteur.getKey()), debut));
+				nodes.add(new Sommet(Datastore.keyToString(vecteur.getKey()), debut));
 			}
 			if(addFin){
-				nodes.add(new Vertex(Datastore.keyToString(vecteur.getKey()), fin));
+				nodes.add(new Sommet(Datastore.keyToString(vecteur.getKey()), fin));
 			}
 		}
 
 		for(Vecteur vecteur : etageToGo.getChemins()){
 			double norme = vecteur.getNorme();
 
-			Vertex source = null;
-			Vertex destination = null;
-			for(Vertex node : nodes){
+			Sommet source = null;
+			Sommet destination = null;
+			for(Sommet node : nodes){
 				if(node.getPointGPS().equals(vecteur.getPointDebut())){
 					source = node;
 				}
@@ -101,7 +101,7 @@ public class CheminAPI {
 				}
 			}
 
-			edges.add(new Edge(Datastore.keyToString(vecteur.getKey()), source, destination, norme));
+			edges.add(new Arc(Datastore.keyToString(vecteur.getKey()), source, destination, norme));
 
 		}
 
@@ -113,9 +113,9 @@ public class CheminAPI {
 		PointGPS debut = new PointGPS(parking.getPointGPSLat(), parking.getPointGPSLon());
 		PointGPS destination = placeToGo.getPoint();
 
-		Vertex vertexDebut = null;
-		Vertex vertexFin = null;
-		for(Vertex node : nodes){
+		Sommet vertexDebut = null;
+		Sommet vertexFin = null;
+		for(Sommet node : nodes){
 			if(node.getPointGPS().equals(debut)){
 				vertexDebut = node;
 			}
@@ -125,11 +125,11 @@ public class CheminAPI {
 		}
 
 		dijkstra.execute(vertexDebut);
-		LinkedList<Vertex> path = dijkstra.getPath(vertexFin);
+		LinkedList<Sommet> path = dijkstra.getPath(vertexFin);
 
 		PointGPS[] itineraire = new PointGPS[path.size()];
 		int i = 0;
-		for(Vertex vertex : path){
+		for(Sommet vertex : path){
 			itineraire[i] = vertex.getPointGPS();
 			i++;
 		}

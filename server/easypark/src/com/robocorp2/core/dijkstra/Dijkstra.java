@@ -1,4 +1,4 @@
-package com.robocorp2.core;
+package com.robocorp2.core.dijkstra;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
@@ -12,37 +12,37 @@ import java.util.Set;
 public class Dijkstra {
     
      
-	private final List<Vertex> nodes;
-	  private final List<Edge> edges;
-	  private Set<Vertex> settledNodes;
-	  private Set<Vertex> unSettledNodes;
-	  private Map<Vertex, Vertex> predecessors;
-	  private Map<Vertex, Double> distance;
+	private final List<Sommet> nodes;
+	  private final List<Arc> edges;
+	  private Set<Sommet> settledNodes;
+	  private Set<Sommet> unSettledNodes;
+	  private Map<Sommet, Sommet> predecessors;
+	  private Map<Sommet, Double> distance;
 
 	  public Dijkstra(Graphe graph) {
 	    // create a copy of the array so that we can operate on this array
-	    this.nodes = new ArrayList<Vertex>(graph.getVertexes());
-	    this.edges = new ArrayList<Edge>(graph.getEdges());
+	    this.nodes = new ArrayList<Sommet>(graph.getVertexes());
+	    this.edges = new ArrayList<Arc>(graph.getEdges());
 	  }
 
-	  public void execute(Vertex source) {
-	    settledNodes = new HashSet<Vertex>();
-	    unSettledNodes = new HashSet<Vertex>();
-	    distance = new HashMap<Vertex, Double>();
-	    predecessors = new HashMap<Vertex, Vertex>();
+	  public void execute(Sommet source) {
+	    settledNodes = new HashSet<Sommet>();
+	    unSettledNodes = new HashSet<Sommet>();
+	    distance = new HashMap<Sommet, Double>();
+	    predecessors = new HashMap<Sommet, Sommet>();
 	    distance.put(source, 0.0);
 	    unSettledNodes.add(source);
 	    while (unSettledNodes.size() > 0) {
-	      Vertex node = getMinimum(unSettledNodes);
+	      Sommet node = getMinimum(unSettledNodes);
 	      settledNodes.add(node);
 	      unSettledNodes.remove(node);
 	      findMinimalDistances(node);
 	    }
 	  }
 
-	  private void findMinimalDistances(Vertex node) {
-	    List<Vertex> adjacentNodes = getNeighbors(node);
-	    for (Vertex target : adjacentNodes) {
+	  private void findMinimalDistances(Sommet node) {
+	    List<Sommet> adjacentNodes = getNeighbors(node);
+	    for (Sommet target : adjacentNodes) {
 	      if (getShortestDistance(target) > getShortestDistance(node)
 	          + getDistance(node, target)) {
 	        distance.put(target, getShortestDistance(node)
@@ -54,8 +54,8 @@ public class Dijkstra {
 
 	  }
 
-	  private double getDistance(Vertex node, Vertex target) {
-	    for (Edge edge : edges) {
+	  private double getDistance(Sommet node, Sommet target) {
+	    for (Arc edge : edges) {
 	      if (edge.getSource().equals(node)
 	          && edge.getDestination().equals(target)) {
 	        return edge.getWeight();
@@ -64,9 +64,9 @@ public class Dijkstra {
 	    throw new RuntimeException("Should not happen");
 	  }
 
-	  private List<Vertex> getNeighbors(Vertex node) {
-	    List<Vertex> neighbors = new ArrayList<Vertex>();
-	    for (Edge edge : edges) {
+	  private List<Sommet> getNeighbors(Sommet node) {
+	    List<Sommet> neighbors = new ArrayList<Sommet>();
+	    for (Arc edge : edges) {
 	      if (edge.getSource().equals(node)
 	          && !isSettled(edge.getDestination())) {
 	        neighbors.add(edge.getDestination());
@@ -75,9 +75,9 @@ public class Dijkstra {
 	    return neighbors;
 	  }
 
-	  private Vertex getMinimum(Set<Vertex> vertexes) {
-	    Vertex minimum = null;
-	    for (Vertex vertex : vertexes) {
+	  private Sommet getMinimum(Set<Sommet> vertexes) {
+	    Sommet minimum = null;
+	    for (Sommet vertex : vertexes) {
 	      if (minimum == null) {
 	        minimum = vertex;
 	      } else {
@@ -89,11 +89,11 @@ public class Dijkstra {
 	    return minimum;
 	  }
 
-	  private boolean isSettled(Vertex vertex) {
+	  private boolean isSettled(Sommet vertex) {
 	    return settledNodes.contains(vertex);
 	  }
 
-	  private double getShortestDistance(Vertex destination) {
+	  private double getShortestDistance(Sommet destination) {
 	    Double d = distance.get(destination);
 	    if (d == null) {
 	      return Double.MAX_VALUE;
@@ -106,9 +106,9 @@ public class Dijkstra {
 	   * This method returns the path from the source to the selected target and
 	   * NULL if no path exists
 	   */
-	  public LinkedList<Vertex> getPath(Vertex target) {
-	    LinkedList<Vertex> path = new LinkedList<Vertex>();
-	    Vertex step = target;
+	  public LinkedList<Sommet> getPath(Sommet target) {
+	    LinkedList<Sommet> path = new LinkedList<Sommet>();
+	    Sommet step = target;
 	    // check if a path exists
 	    if (predecessors.get(step) == null) {
 	      return null;

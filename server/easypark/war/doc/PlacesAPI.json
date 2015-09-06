@@ -60,7 +60,7 @@
     "unimplemented" : false
   }, {
     "name" : "getPlaceStatus",
-    "path" : "getFreePlace/{idParking}/{idEtage}/{idPlace}",
+    "path" : "getPlaceStatus/{idParking}/{idEtage}/{idPlace}",
     "doc" : "Donne l'état d'une place",
     "author" : "Mathieu Passenaud",
     "version" : "0.1",

@@ -124,7 +124,7 @@ public class PlacesAPI {
 	}
 	
 	@GET
-	@Path("getFreePlace/{idParking}/{idEtage}/{idPlace}")
+	@Path("getPlaceStatus/{idParking}/{idEtage}/{idPlace}")
 	@Consumes("Application/JSON")
 	@Produces("Application/JSON")
 	@ApiDoc("Donne l'état d'une place")
