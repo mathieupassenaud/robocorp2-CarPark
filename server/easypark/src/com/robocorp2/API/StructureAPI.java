@@ -12,6 +12,7 @@ import com.google.gson.GsonBuilder;
 import com.robocorp2.DAO.ParkingDAO;
 import com.robocorp2.core.KeyAdapterSerializer;
 import com.robocorp2.core.PlaceStatus;
+import com.robocorp2.core.PlaceType;
 import com.robocorp2.model.parking.Camera;
 import com.robocorp2.model.parking.Etage;
 import com.robocorp2.model.parking.Parking;
@@ -43,8 +44,8 @@ public class StructureAPI {
 		ArrayList<Vecteur> chemins = new ArrayList<Vecteur>();
 		ArrayList<Camera> cameras = new ArrayList<Camera>(); 
 		
-		places.add(new Place(new PointGPS(1.0, 2.0), 1, 90, PlaceStatus.FREE));
-		places.add(new Place(new PointGPS(2.0, 3.0), 2, 90, PlaceStatus.FREE));
+		places.add(new Place(new PointGPS(1.0, 2.0), 1, 90, PlaceStatus.FREE, PlaceType.NORMAL));
+		places.add(new Place(new PointGPS(2.0, 3.0), 2, 90, PlaceStatus.FREE, PlaceType.NORMAL));
 		
 		chemins.add(new Vecteur(new PointGPS(2.0, 4.0), new PointGPS(4.0, 7.0)));
 		chemins.add(new Vecteur(new PointGPS(4.0, 7.0), new PointGPS(9.0, 8.0)));
@@ -64,7 +65,7 @@ public class StructureAPI {
 	@ApiAuthor("Mathieu Passenaud")
 	@ApiVersion("0.1")
 	public String getDemoPlace(){
-		return gson.toJson(new Place(new PointGPS(1.0, 2.0), 1, 90, PlaceStatus.FREE));
+		return gson.toJson(new Place(new PointGPS(1.0, 2.0), 1, 90, PlaceStatus.FREE, PlaceType.NORMAL));
 	}
 	
 	@GET
@@ -78,8 +79,8 @@ public class StructureAPI {
 		ArrayList<Vecteur> chemins = new ArrayList<Vecteur>();
 		ArrayList<Camera> cameras = new ArrayList<Camera>(); 
 		
-		places.add(new Place(new PointGPS(1.0, 2.0), 1, 90, PlaceStatus.FREE));
-		places.add(new Place(new PointGPS(2.0, 3.0), 2, 90, PlaceStatus.FREE));
+		places.add(new Place(new PointGPS(1.0, 2.0), 1, 90, PlaceStatus.FREE, PlaceType.NORMAL));
+		places.add(new Place(new PointGPS(2.0, 3.0), 2, 90, PlaceStatus.FREE, PlaceType.NORMAL));
 		
 		chemins.add(new Vecteur(new PointGPS(2.0, 4.0), new PointGPS(4.0, 7.0)));
 		chemins.add(new Vecteur(new PointGPS(4.0, 7.0), new PointGPS(9.0, 8.0)));
@@ -121,7 +122,7 @@ public class StructureAPI {
 		ArrayList<Vecteur> chemins = new ArrayList<Vecteur>();
 		
 		for(int i=1; i<100; i++){
-			places.add(new Place(new PointGPS( 43.566566+(i*0.00002), 1.466449+(i*0.00002)), i, 90, PlaceStatus.FREE));
+			places.add(new Place(new PointGPS( 43.566566+(i*0.00002), 1.466449+(i*0.00002)), i, 90, PlaceStatus.FREE, PlaceType.NORMAL));
 		}
 		
 		cameras.add(new Camera(new PointGPS(43.566566, 1.466449), 3, 0, 120, "adresse de la caméra"));
@@ -146,7 +147,7 @@ public class StructureAPI {
 		ArrayList<Vecteur> chemins = new ArrayList<Vecteur>();
 		
 		for(int i=1; i<200; i++){
-			places.add(new Place(new PointGPS( 43.555482+(i*0.00002), 1.476955+(i*0.00002)), i, 90, PlaceStatus.FREE));
+			places.add(new Place(new PointGPS( 43.555482+(i*0.00002), 1.476955+(i*0.00002)), i, 90, PlaceStatus.FREE, PlaceType.NORMAL));
 		}
 		
 		cameras.add(new Camera(new PointGPS(43.555482, 1.476955), 3, 0, 120, "adresse de la caméra"));
@@ -156,6 +157,30 @@ public class StructureAPI {
 		
 		Parking parkingRAM = new Parking(etages, "Parking Ramonville", "Terminus métro", new PointGPS(43.555482, 1.476955));
 		ParkingDAO.getInstance().saveParking(parkingRAM);
+	}
+	
+	@GET
+	@Path("addType")
+	public void addType(){
+		Parking parking = ParkingDAO.getInstance().getParkingByName("Parking Ramonville").get(0);
+		for(Etage etage : parking.getEtages()){
+			for(Place place : etage.getPlaces()){
+				place.setType(PlaceType.NORMAL);
+			}
+		}
+		
+		ParkingDAO.getInstance().saveParking(parking);
+		
+		Parking parking2 = ParkingDAO.getInstance().getParkingByName("Parking CNAM").get(0);
+		for(Etage etage : parking2.getEtages()){
+			for(Place place : etage.getPlaces()){
+				place.setType(PlaceType.NORMAL);
+			}
+		}
+		
+		ParkingDAO.getInstance().saveParking(parking2);
+		
+		
 	}
 	
 }

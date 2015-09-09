@@ -44,13 +44,14 @@ public class Place implements Serializable{
 	 * @param rotation
 	 * @param free
 	 */
-	public Place(PointGPS point, int numero, int rotation, PlaceStatus status) {
+	public Place(PointGPS point, int numero, int rotation, PlaceStatus status, PlaceType type) {
 		super();
 		this.key = Datastore.createKey(Place.class, numero);
 		this.point = point;
 		this.numeroDePlace = numero;
 		this.rotation = rotation;
 		this.status = status;
+		this.type = type;
 	}
 	
 	
